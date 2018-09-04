@@ -1,0 +1,16 @@
+PODS:
+  - Device.swift (1.1.2)
+
+DEPENDENCIES:
+  - Device.swift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Device.swift
+
+SPEC CHECKSUMS:
+  Device.swift: f5ff884087c13999505b3a6b2ff1104fb6923f93
+
+PODFILE CHECKSUM: b30396b77c7cef8e5aa5eda9d577a6642afd596c
+
+COCOAPODS: 1.5.3

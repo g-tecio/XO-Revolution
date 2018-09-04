@@ -7,27 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5403C8B321398CE4005212F6 /* Buttons XO Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5403C8B221398CE4005212F6 /* Buttons XO Sound.wav */; };
+		5412CC8F2135DAE900B3365B /* blueParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5412CC8E2135DAE900B3365B /* blueParticle.sks */; };
 		5450BA2F21349CAF00475068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA2E21349CAF00475068 /* AppDelegate.swift */; };
-		5450BA3121349CAF00475068 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5450BA3021349CAF00475068 /* GameScene.sks */; };
-		5450BA3321349CAF00475068 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5450BA3221349CAF00475068 /* Actions.sks */; };
-		5450BA3521349CAF00475068 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA3421349CAF00475068 /* GameScene.swift */; };
 		5450BA3721349CAF00475068 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA3621349CAF00475068 /* GameViewController.swift */; };
 		5450BA3A21349CAF00475068 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5450BA3821349CAF00475068 /* Main.storyboard */; };
 		5450BA3C21349CB300475068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5450BA3B21349CB300475068 /* Assets.xcassets */; };
 		5450BA3F21349CB300475068 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5450BA3D21349CB300475068 /* LaunchScreen.storyboard */; };
+		5450BA5C21349CDC00475068 /* AiEasyControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA4821349CDC00475068 /* AiEasyControls.swift */; };
+		5450BA5D21349CDC00475068 /* AiEasyGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA4921349CDC00475068 /* AiEasyGame.swift */; };
+		5450BA5E21349CDC00475068 /* AiEasyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA4A21349CDC00475068 /* AiEasyScene.swift */; };
+		5450BA5F21349CDC00475068 /* AiHardControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA4D21349CDC00475068 /* AiHardControls.swift */; };
+		5450BA6021349CDC00475068 /* AiHardGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA4E21349CDC00475068 /* AiHardGame.swift */; };
+		5450BA6121349CDC00475068 /* AiHardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA4F21349CDC00475068 /* AiHardScene.swift */; };
+		5450BA6221349CDC00475068 /* GameControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA5221349CDC00475068 /* GameControls.swift */; };
+		5450BA6321349CDC00475068 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA5321349CDC00475068 /* GameScene.swift */; };
+		5450BA6421349CDC00475068 /* GameTicTacToe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA5421349CDC00475068 /* GameTicTacToe.swift */; };
+		5450BA6521349CDC00475068 /* DifficultyControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA5821349CDC00475068 /* DifficultyControls.swift */; };
+		5450BA6621349CDC00475068 /* DifficultyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA5921349CDC00475068 /* DifficultyScene.swift */; };
+		5450BA6721349CDC00475068 /* MenuControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA5A21349CDC00475068 /* MenuControls.swift */; };
+		5450BA6821349CDC00475068 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA5B21349CDC00475068 /* MenuScene.swift */; };
+		5465BD502138586100BE0988 /* Osound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5465BD4A2138586100BE0988 /* Osound.wav */; };
+		5465BD522138586100BE0988 /* TieXO.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5465BD4C2138586100BE0988 /* TieXO.wav */; };
+		5465BD532138586100BE0988 /* LoseXO.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5465BD4D2138586100BE0988 /* LoseXO.wav */; };
+		5465BD542138586100BE0988 /* WinXO.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5465BD4E2138586100BE0988 /* WinXO.wav */; };
+		5465BD552138586100BE0988 /* Xsound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5465BD4F2138586100BE0988 /* Xsound.wav */; };
+		5465BD572138586700BE0988 /* NeonLight.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5465BD562138586700BE0988 /* NeonLight.wav */; };
+		54E129AC213EF4210059D5C0 /* IntroControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E129AA213EF4210059D5C0 /* IntroControls.swift */; };
+		54E129AD213EF4210059D5C0 /* IntroScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E129AB213EF4210059D5C0 /* IntroScene.swift */; };
+		54E5697E2135F33F006E6679 /* redParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 54E5697D2135F33E006E6679 /* redParticle.sks */; };
+		A295566F70B896B0DEBCF088 /* Pods_XO_Revolution.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45885DF7AF3FDDF681032BBC /* Pods_XO_Revolution.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22A2325617BE46A9F42085BC /* Pods-XO-Revolution.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XO-Revolution.release.xcconfig"; path = "Pods/Target Support Files/Pods-XO-Revolution/Pods-XO-Revolution.release.xcconfig"; sourceTree = "<group>"; };
+		45885DF7AF3FDDF681032BBC /* Pods_XO_Revolution.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XO_Revolution.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5403C8B221398CE4005212F6 /* Buttons XO Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Buttons XO Sound.wav"; sourceTree = "<group>"; };
+		5412CC8E2135DAE900B3365B /* blueParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = blueParticle.sks; sourceTree = "<group>"; };
 		5450BA2B21349CAF00475068 /* XO-Revolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XO-Revolution.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5450BA2E21349CAF00475068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5450BA3021349CAF00475068 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		5450BA3221349CAF00475068 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		5450BA3421349CAF00475068 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		5450BA3621349CAF00475068 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		5450BA3921349CAF00475068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5450BA3B21349CB300475068 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5450BA3E21349CB300475068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5450BA4021349CB300475068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5450BA4821349CDC00475068 /* AiEasyControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AiEasyControls.swift; sourceTree = "<group>"; };
+		5450BA4921349CDC00475068 /* AiEasyGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AiEasyGame.swift; sourceTree = "<group>"; };
+		5450BA4A21349CDC00475068 /* AiEasyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AiEasyScene.swift; sourceTree = "<group>"; };
+		5450BA4D21349CDC00475068 /* AiHardControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AiHardControls.swift; sourceTree = "<group>"; };
+		5450BA4E21349CDC00475068 /* AiHardGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AiHardGame.swift; sourceTree = "<group>"; };
+		5450BA4F21349CDC00475068 /* AiHardScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AiHardScene.swift; sourceTree = "<group>"; };
+		5450BA5221349CDC00475068 /* GameControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameControls.swift; sourceTree = "<group>"; };
+		5450BA5321349CDC00475068 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		5450BA5421349CDC00475068 /* GameTicTacToe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTicTacToe.swift; sourceTree = "<group>"; };
+		5450BA5821349CDC00475068 /* DifficultyControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyControls.swift; sourceTree = "<group>"; };
+		5450BA5921349CDC00475068 /* DifficultyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DifficultyScene.swift; sourceTree = "<group>"; };
+		5450BA5A21349CDC00475068 /* MenuControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuControls.swift; sourceTree = "<group>"; };
+		5450BA5B21349CDC00475068 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		5465BD4A2138586100BE0988 /* Osound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Osound.wav; sourceTree = "<group>"; };
+		5465BD4C2138586100BE0988 /* TieXO.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = TieXO.wav; sourceTree = "<group>"; };
+		5465BD4D2138586100BE0988 /* LoseXO.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LoseXO.wav; sourceTree = "<group>"; };
+		5465BD4E2138586100BE0988 /* WinXO.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = WinXO.wav; sourceTree = "<group>"; };
+		5465BD4F2138586100BE0988 /* Xsound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Xsound.wav; sourceTree = "<group>"; };
+		5465BD562138586700BE0988 /* NeonLight.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = NeonLight.wav; sourceTree = "<group>"; };
+		54E129AA213EF4210059D5C0 /* IntroControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroControls.swift; sourceTree = "<group>"; };
+		54E129AB213EF4210059D5C0 /* IntroScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroScene.swift; sourceTree = "<group>"; };
+		54E5697D2135F33E006E6679 /* redParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = redParticle.sks; sourceTree = "<group>"; };
+		74D32D511A89CE434704FA54 /* Pods-XO-Revolution.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XO-Revolution.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XO-Revolution/Pods-XO-Revolution.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A295566F70B896B0DEBCF088 /* Pods_XO_Revolution.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +93,8 @@
 			children = (
 				5450BA2D21349CAF00475068 /* XO-Revolution */,
 				5450BA2C21349CAF00475068 /* Products */,
+				C26F1B1947769ABFD3E51DAF /* Pods */,
+				CC4AE7AF42EC57B36301F73E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,16 +110,126 @@
 			isa = PBXGroup;
 			children = (
 				5450BA2E21349CAF00475068 /* AppDelegate.swift */,
-				5450BA3021349CAF00475068 /* GameScene.sks */,
-				5450BA3221349CAF00475068 /* Actions.sks */,
-				5450BA3421349CAF00475068 /* GameScene.swift */,
 				5450BA3621349CAF00475068 /* GameViewController.swift */,
+				5450BA4621349CDC00475068 /* Scenes */,
 				5450BA3821349CAF00475068 /* Main.storyboard */,
 				5450BA3B21349CB300475068 /* Assets.xcassets */,
+				5450BA7E2134A77700475068 /* Particles */,
+				5450BA6921349DA800475068 /* Sounds */,
 				5450BA3D21349CB300475068 /* LaunchScreen.storyboard */,
 				5450BA4021349CB300475068 /* Info.plist */,
 			);
 			path = "XO-Revolution";
+			sourceTree = "<group>";
+		};
+		5450BA4621349CDC00475068 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				547B8EF6213DB2F1006FC28E /* Intro */,
+				5450BA5621349CDC00475068 /* Menu */,
+				5450BA4721349CDC00475068 /* AiEasy */,
+				5450BA4C21349CDC00475068 /* AiHard */,
+				5450BA5121349CDC00475068 /* Game */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		5450BA4721349CDC00475068 /* AiEasy */ = {
+			isa = PBXGroup;
+			children = (
+				5450BA4921349CDC00475068 /* AiEasyGame.swift */,
+				5450BA4821349CDC00475068 /* AiEasyControls.swift */,
+				5450BA4A21349CDC00475068 /* AiEasyScene.swift */,
+			);
+			path = AiEasy;
+			sourceTree = "<group>";
+		};
+		5450BA4C21349CDC00475068 /* AiHard */ = {
+			isa = PBXGroup;
+			children = (
+				5450BA4E21349CDC00475068 /* AiHardGame.swift */,
+				5450BA4D21349CDC00475068 /* AiHardControls.swift */,
+				5450BA4F21349CDC00475068 /* AiHardScene.swift */,
+			);
+			path = AiHard;
+			sourceTree = "<group>";
+		};
+		5450BA5121349CDC00475068 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				5450BA5421349CDC00475068 /* GameTicTacToe.swift */,
+				5450BA5221349CDC00475068 /* GameControls.swift */,
+				5450BA5321349CDC00475068 /* GameScene.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		5450BA5621349CDC00475068 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				5450BA5A21349CDC00475068 /* MenuControls.swift */,
+				5450BA5B21349CDC00475068 /* MenuScene.swift */,
+				5450BA5721349CDC00475068 /* Difficulty */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		5450BA5721349CDC00475068 /* Difficulty */ = {
+			isa = PBXGroup;
+			children = (
+				5450BA5821349CDC00475068 /* DifficultyControls.swift */,
+				5450BA5921349CDC00475068 /* DifficultyScene.swift */,
+			);
+			path = Difficulty;
+			sourceTree = "<group>";
+		};
+		5450BA6921349DA800475068 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				5403C8B221398CE4005212F6 /* Buttons XO Sound.wav */,
+				5465BD4D2138586100BE0988 /* LoseXO.wav */,
+				5465BD4A2138586100BE0988 /* Osound.wav */,
+				5465BD4C2138586100BE0988 /* TieXO.wav */,
+				5465BD4E2138586100BE0988 /* WinXO.wav */,
+				5465BD562138586700BE0988 /* NeonLight.wav */,
+				5465BD4F2138586100BE0988 /* Xsound.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		5450BA7E2134A77700475068 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				5412CC8E2135DAE900B3365B /* blueParticle.sks */,
+				54E5697D2135F33E006E6679 /* redParticle.sks */,
+			);
+			path = Particles;
+			sourceTree = "<group>";
+		};
+		547B8EF6213DB2F1006FC28E /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				54E129AA213EF4210059D5C0 /* IntroControls.swift */,
+				54E129AB213EF4210059D5C0 /* IntroScene.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		C26F1B1947769ABFD3E51DAF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74D32D511A89CE434704FA54 /* Pods-XO-Revolution.debug.xcconfig */,
+				22A2325617BE46A9F42085BC /* Pods-XO-Revolution.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CC4AE7AF42EC57B36301F73E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45885DF7AF3FDDF681032BBC /* Pods_XO_Revolution.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +239,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5450BA4321349CB300475068 /* Build configuration list for PBXNativeTarget "XO-Revolution" */;
 			buildPhases = (
+				63232B6C815664D411C5FCD6 /* [CP] Check Pods Manifest.lock */,
 				5450BA2721349CAF00475068 /* Sources */,
 				5450BA2821349CAF00475068 /* Frameworks */,
 				5450BA2921349CAF00475068 /* Resources */,
+				7B9D50E0BEF0659C3A189C80 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,23 +293,83 @@
 			buildActionMask = 2147483647;
 			files = (
 				5450BA3A21349CAF00475068 /* Main.storyboard in Resources */,
-				5450BA3121349CAF00475068 /* GameScene.sks in Resources */,
 				5450BA3C21349CB300475068 /* Assets.xcassets in Resources */,
 				5450BA3F21349CB300475068 /* LaunchScreen.storyboard in Resources */,
-				5450BA3321349CAF00475068 /* Actions.sks in Resources */,
+				5465BD552138586100BE0988 /* Xsound.wav in Resources */,
+				5412CC8F2135DAE900B3365B /* blueParticle.sks in Resources */,
+				54E5697E2135F33F006E6679 /* redParticle.sks in Resources */,
+				5465BD522138586100BE0988 /* TieXO.wav in Resources */,
+				5403C8B321398CE4005212F6 /* Buttons XO Sound.wav in Resources */,
+				5465BD532138586100BE0988 /* LoseXO.wav in Resources */,
+				5465BD572138586700BE0988 /* NeonLight.wav in Resources */,
+				5465BD542138586100BE0988 /* WinXO.wav in Resources */,
+				5465BD502138586100BE0988 /* Osound.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63232B6C815664D411C5FCD6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XO-Revolution-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B9D50E0BEF0659C3A189C80 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-XO-Revolution/Pods-XO-Revolution-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Device.swift/Device_swift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Device_swift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XO-Revolution/Pods-XO-Revolution-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5450BA2721349CAF00475068 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5450BA3521349CAF00475068 /* GameScene.swift in Sources */,
+				5450BA6421349CDC00475068 /* GameTicTacToe.swift in Sources */,
+				5450BA6221349CDC00475068 /* GameControls.swift in Sources */,
+				5450BA6621349CDC00475068 /* DifficultyScene.swift in Sources */,
 				5450BA3721349CAF00475068 /* GameViewController.swift in Sources */,
+				5450BA5F21349CDC00475068 /* AiHardControls.swift in Sources */,
+				5450BA5E21349CDC00475068 /* AiEasyScene.swift in Sources */,
+				5450BA6321349CDC00475068 /* GameScene.swift in Sources */,
 				5450BA2F21349CAF00475068 /* AppDelegate.swift in Sources */,
+				5450BA5C21349CDC00475068 /* AiEasyControls.swift in Sources */,
+				5450BA6021349CDC00475068 /* AiHardGame.swift in Sources */,
+				5450BA5D21349CDC00475068 /* AiEasyGame.swift in Sources */,
+				5450BA6721349CDC00475068 /* MenuControls.swift in Sources */,
+				5450BA6821349CDC00475068 /* MenuScene.swift in Sources */,
+				5450BA6521349CDC00475068 /* DifficultyControls.swift in Sources */,
+				54E129AC213EF4210059D5C0 /* IntroControls.swift in Sources */,
+				54E129AD213EF4210059D5C0 /* IntroScene.swift in Sources */,
+				5450BA6121349CDC00475068 /* AiHardScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,9 +511,11 @@
 		};
 		5450BA4421349CB300475068 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74D32D511A89CE434704FA54 /* Pods-XO-Revolution.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 36SAKH8RTR;
 				INFOPLIST_FILE = "XO-Revolution/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -307,9 +530,11 @@
 		};
 		5450BA4521349CB300475068 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22A2325617BE46A9F42085BC /* Pods-XO-Revolution.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 36SAKH8RTR;
 				INFOPLIST_FILE = "XO-Revolution/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
