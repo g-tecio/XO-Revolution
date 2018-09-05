@@ -36,7 +36,7 @@ class IntroScene: SKScene {
         /// Load scene
         if let skView = gameViewController.view as! SKView? {
             self.size = skView.bounds.size
-            self.scaleMode = .fill
+            self.scaleMode = .aspectFill
             self.backgroundColor = UIColor(red:0.10, green:0.10, blue:0.10, alpha:1.0)
             
             // TODO: Comment or remove before release to App Store

@@ -35,7 +35,7 @@ class DifficultyScene: SKScene {
         /// Load scene
         if let skView = gameViewController.view as! SKView? {
             self.size = skView.bounds.size
-            self.scaleMode = .fill
+            self.scaleMode = .aspectFill
             
             // TODO: Comment or remove before release to App Store
             skView.ignoresSiblingOrder = true

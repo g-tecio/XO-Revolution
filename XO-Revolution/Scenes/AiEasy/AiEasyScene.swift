@@ -39,7 +39,7 @@ class AiEasyScene: SKScene {
 		/// Load scene
 		if let skView = gameViewController.view as! SKView? {
 			self.size = skView.bounds.size
-			self.scaleMode = .fill
+			self.scaleMode = .aspectFill
 		}
 	}
 

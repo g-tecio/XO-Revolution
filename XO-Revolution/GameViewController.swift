@@ -48,12 +48,12 @@ class GameViewController: UIViewController {
         
         skView.frame = CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height)
         skView.center = self.view.center
-        skView.contentMode = .scaleAspectFit
+        skView.contentMode = .scaleAspectFill
         skView.allowsTransparency = true
         
         lottieUiView.frame = CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height)
         lottieUiView.center = self.view.center
-        lottieUiView.contentMode = .scaleAspectFit
+        lottieUiView.contentMode = .scaleAspectFill
         lottieUiView.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1)
         
         /// Introduction Scene
