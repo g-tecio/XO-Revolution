@@ -20,8 +20,6 @@ class DifficultyScene: SKScene {
     
     private var lastUpdateTime : TimeInterval = 0
     
-    let sound = SKAction.playSoundFileNamed("NeonLight", waitForCompletion: false)
-    
     /// Custom Initializer
     init(sceneSize: CGSize, referenceGVC: GameViewController) {
         
@@ -107,11 +105,9 @@ class DifficultyScene: SKScene {
             
             /// Exit and return to GameScene
             if (item.name == "buttonSprite-Easy") {
-                run(sound)
                 gameViewController.skView.presentScene(gameViewController.aiEasyScene)
             }
             if (item.name == "buttonSprite-Hard") {
-                 run(sound)
                 gameViewController.skView.presentScene(gameViewController.aiHardScene)
             }
         }

@@ -19,9 +19,6 @@ class MenuScene: SKScene {
 	var menuControls: MenuControls!
     
     private var lastUpdateTime : TimeInterval = 0
-    
-    let sound = SKAction.playSoundFileNamed("Buttons XO Sound", waitForCompletion: false)
-    
 
 	/// Custom Initializer
 	init(sceneSize: CGSize, referenceGVC: GameViewController) {
@@ -110,15 +107,9 @@ class MenuScene: SKScene {
 			
 			/// Exit and return to GameScene
 			if (item.name == "buttonSprite-Game") {
-run(sound)
-//                SKAction.play()
-                
                 gameViewController.skView.presentScene(gameViewController.difficultyScene)
-                
 			}
             if (item.name == "buttonSprite-2Players") {
-                run(sound)
-                
                 gameViewController.skView.presentScene(gameViewController.gameScene)
             }
 		}

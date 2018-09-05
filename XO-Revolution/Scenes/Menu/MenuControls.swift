@@ -16,18 +16,12 @@ struct MenuControls {
     /// Game Button
     let buttonTwoPlayers:SKSpriteNode
     
-//    let soundStartGame: SKAudioNode
-    
     init(inThisScene: MenuScene) {
-        
-//        soundStartGame = SKAudioNode.init(fileNamed: "ButtonsXO")
-        
         
         /// Play  Button
         buttonOnePlayer = SKSpriteNode.init(imageNamed: "ButtonPlay")
         buttonOnePlayer.name = "buttonSprite-Game"
         buttonOnePlayer.zPosition = 3
-//        buttonGame.addChild(soundStartGame)
         
         /// Instructions  Button
         buttonTwoPlayers = SKSpriteNode.init(imageNamed: "Button2Players")
