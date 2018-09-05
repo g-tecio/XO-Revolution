@@ -146,7 +146,7 @@ class AiEasyGame {
         posOy = randomNumber(MIN: 0, MAX: 3)
         
         if(board[posOx][posOy] == 0 ){
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
                 self.board[posOx][posOy] = 2
                 self.paintElement(position: posOx + (posOy * 3))
                 print(posOx)
