@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import Firebase
 
 class GameTicTacToe {
     
@@ -196,6 +197,7 @@ class GameTicTacToe {
     }
     
     func resetGame(){
+         Analytics.logEvent("ResetGame", parameters: nil)
         self.gameScene.isUserInteractionEnabled = true
         gameScene.gameViewController.skView.presentScene(gameScene)
     }

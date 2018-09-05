@@ -34,6 +34,7 @@
 		54E129AC213EF4210059D5C0 /* IntroControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E129AA213EF4210059D5C0 /* IntroControls.swift */; };
 		54E129AD213EF4210059D5C0 /* IntroScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E129AB213EF4210059D5C0 /* IntroScene.swift */; };
 		54E5697E2135F33F006E6679 /* redParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 54E5697D2135F33E006E6679 /* redParticle.sks */; };
+		9AB2FC5B214084CC00F519EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AB2FC5A214084CC00F519EE /* GoogleService-Info.plist */; };
 		A295566F70B896B0DEBCF088 /* Pods_XO_Revolution.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45885DF7AF3FDDF681032BBC /* Pods_XO_Revolution.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		54E129AB213EF4210059D5C0 /* IntroScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroScene.swift; sourceTree = "<group>"; };
 		54E5697D2135F33E006E6679 /* redParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = redParticle.sks; sourceTree = "<group>"; };
 		74D32D511A89CE434704FA54 /* Pods-XO-Revolution.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XO-Revolution.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XO-Revolution/Pods-XO-Revolution.debug.xcconfig"; sourceTree = "<group>"; };
+		9AB2FC5A214084CC00F519EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		5450BA2D21349CAF00475068 /* XO-Revolution */ = {
 			isa = PBXGroup;
 			children = (
+				9AB2FC5A214084CC00F519EE /* GoogleService-Info.plist */,
 				5450BA2E21349CAF00475068 /* AppDelegate.swift */,
 				5450BA3621349CAF00475068 /* GameViewController.swift */,
 				5450BA4621349CDC00475068 /* Scenes */,
@@ -238,6 +241,7 @@
 				5450BA2821349CAF00475068 /* Frameworks */,
 				5450BA2921349CAF00475068 /* Resources */,
 				7B9D50E0BEF0659C3A189C80 /* [CP] Embed Pods Frameworks */,
+				12683A610C6BEC6E06FE374D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -294,6 +298,7 @@
 				54E5697E2135F33F006E6679 /* redParticle.sks in Resources */,
 				5465BD522138586100BE0988 /* TieXO.wav in Resources */,
 				5465BD532138586100BE0988 /* LoseXO.wav in Resources */,
+				9AB2FC5B214084CC00F519EE /* GoogleService-Info.plist in Resources */,
 				5465BD542138586100BE0988 /* WinXO.wav in Resources */,
 				5465BD502138586100BE0988 /* Osound.wav in Resources */,
 			);
@@ -302,6 +307,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		12683A610C6BEC6E06FE374D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-XO-Revolution/Pods-XO-Revolution-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XO-Revolution/Pods-XO-Revolution-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		63232B6C815664D411C5FCD6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -327,11 +354,35 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-XO-Revolution/Pods-XO-Revolution-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/Device.swift/Device_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Device_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -513,7 +564,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.carthwheelgalaxy.XO-Revolution";
+				PRODUCT_BUNDLE_IDENTIFIER = com.guadianatechnologygames.xorevolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -532,7 +583,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.carthwheelgalaxy.XO-Revolution";
+				PRODUCT_BUNDLE_IDENTIFIER = com.guadianatechnologygames.xorevolution;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

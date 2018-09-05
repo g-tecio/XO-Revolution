@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+import Firebase
 
 class MenuScene: SKScene {
 	
@@ -107,9 +108,11 @@ class MenuScene: SKScene {
 			
 			/// Exit and return to GameScene
 			if (item.name == "buttonSprite-Game") {
+                    Analytics.logEvent("OnePlayer", parameters: nil)
                 gameViewController.skView.presentScene(gameViewController.difficultyScene)
 			}
             if (item.name == "buttonSprite-2Players") {
+                    Analytics.logEvent("TwoPlayers", parameters: nil)
                 gameViewController.skView.presentScene(gameViewController.gameScene)
             }
 		}

@@ -7,7 +7,7 @@
 //
 
 import SpriteKit
-
+import Firebase
 class AiEasyGame {
     
     /// Game Scene
@@ -228,6 +228,7 @@ class AiEasyGame {
     }
     
     func resetGame(){
+         Analytics.logEvent("ResetGame", parameters: nil)
         self.aiEasyScene.isUserInteractionEnabled = true
         aiEasyScene.gameViewController.skView.presentScene(aiEasyScene)
     }

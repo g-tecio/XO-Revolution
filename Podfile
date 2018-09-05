@@ -7,4 +7,12 @@ target 'XO-Revolution' do
 
   # Pods for XO-Revolution
   pod 'Device.swift'
+  pod 'Firebase/Core'
+  pod 'FirebaseUI/Auth'
+  pod 'Firebase/Performance'
+  pod 'FirebaseUI/Google'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseAnalytics'
 end
