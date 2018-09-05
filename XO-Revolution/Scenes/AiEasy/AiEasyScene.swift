@@ -22,8 +22,6 @@ class AiEasyScene: SKScene {
 	
     private var lastUpdateTime : TimeInterval = 0
     
-    let sound = SKAction.playSoundFileNamed("Buttons XO Sound", waitForCompletion: false)
-
 	/// Custom Initializer
 	init(sceneSize: CGSize, referenceGVC: GameViewController) {
 		
@@ -115,7 +113,6 @@ class AiEasyScene: SKScene {
 			
 			/// Exit and return to GameScene
 			if (item.name == "buttonSprite-Menu") {
-                run(sound)
                 gameViewController.skView.presentScene(gameViewController.menuScene)
 			}
 			else {

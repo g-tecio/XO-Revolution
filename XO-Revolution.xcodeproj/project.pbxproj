@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5403C8B321398CE4005212F6 /* Buttons XO Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5403C8B221398CE4005212F6 /* Buttons XO Sound.wav */; };
 		5412CC8F2135DAE900B3365B /* blueParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5412CC8E2135DAE900B3365B /* blueParticle.sks */; };
 		5450BA2F21349CAF00475068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA2E21349CAF00475068 /* AppDelegate.swift */; };
 		5450BA3721349CAF00475068 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5450BA3621349CAF00475068 /* GameViewController.swift */; };
@@ -32,7 +31,6 @@
 		5465BD532138586100BE0988 /* LoseXO.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5465BD4D2138586100BE0988 /* LoseXO.wav */; };
 		5465BD542138586100BE0988 /* WinXO.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5465BD4E2138586100BE0988 /* WinXO.wav */; };
 		5465BD552138586100BE0988 /* Xsound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5465BD4F2138586100BE0988 /* Xsound.wav */; };
-		5465BD572138586700BE0988 /* NeonLight.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5465BD562138586700BE0988 /* NeonLight.wav */; };
 		54E129AC213EF4210059D5C0 /* IntroControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E129AA213EF4210059D5C0 /* IntroControls.swift */; };
 		54E129AD213EF4210059D5C0 /* IntroScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E129AB213EF4210059D5C0 /* IntroScene.swift */; };
 		54E5697E2135F33F006E6679 /* redParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 54E5697D2135F33E006E6679 /* redParticle.sks */; };
@@ -42,7 +40,6 @@
 /* Begin PBXFileReference section */
 		22A2325617BE46A9F42085BC /* Pods-XO-Revolution.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XO-Revolution.release.xcconfig"; path = "Pods/Target Support Files/Pods-XO-Revolution/Pods-XO-Revolution.release.xcconfig"; sourceTree = "<group>"; };
 		45885DF7AF3FDDF681032BBC /* Pods_XO_Revolution.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XO_Revolution.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5403C8B221398CE4005212F6 /* Buttons XO Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Buttons XO Sound.wav"; sourceTree = "<group>"; };
 		5412CC8E2135DAE900B3365B /* blueParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = blueParticle.sks; sourceTree = "<group>"; };
 		5450BA2B21349CAF00475068 /* XO-Revolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XO-Revolution.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5450BA2E21349CAF00475068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +66,6 @@
 		5465BD4D2138586100BE0988 /* LoseXO.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LoseXO.wav; sourceTree = "<group>"; };
 		5465BD4E2138586100BE0988 /* WinXO.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = WinXO.wav; sourceTree = "<group>"; };
 		5465BD4F2138586100BE0988 /* Xsound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Xsound.wav; sourceTree = "<group>"; };
-		5465BD562138586700BE0988 /* NeonLight.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = NeonLight.wav; sourceTree = "<group>"; };
 		54E129AA213EF4210059D5C0 /* IntroControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroControls.swift; sourceTree = "<group>"; };
 		54E129AB213EF4210059D5C0 /* IntroScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroScene.swift; sourceTree = "<group>"; };
 		54E5697D2135F33E006E6679 /* redParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = redParticle.sks; sourceTree = "<group>"; };
@@ -186,13 +182,11 @@
 		5450BA6921349DA800475068 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				5403C8B221398CE4005212F6 /* Buttons XO Sound.wav */,
-				5465BD4D2138586100BE0988 /* LoseXO.wav */,
-				5465BD4A2138586100BE0988 /* Osound.wav */,
-				5465BD4C2138586100BE0988 /* TieXO.wav */,
-				5465BD4E2138586100BE0988 /* WinXO.wav */,
-				5465BD562138586700BE0988 /* NeonLight.wav */,
 				5465BD4F2138586100BE0988 /* Xsound.wav */,
+				5465BD4A2138586100BE0988 /* Osound.wav */,
+				5465BD4E2138586100BE0988 /* WinXO.wav */,
+				5465BD4D2138586100BE0988 /* LoseXO.wav */,
+				5465BD4C2138586100BE0988 /* TieXO.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -299,9 +293,7 @@
 				5412CC8F2135DAE900B3365B /* blueParticle.sks in Resources */,
 				54E5697E2135F33F006E6679 /* redParticle.sks in Resources */,
 				5465BD522138586100BE0988 /* TieXO.wav in Resources */,
-				5403C8B321398CE4005212F6 /* Buttons XO Sound.wav in Resources */,
 				5465BD532138586100BE0988 /* LoseXO.wav in Resources */,
-				5465BD572138586700BE0988 /* NeonLight.wav in Resources */,
 				5465BD542138586100BE0988 /* WinXO.wav in Resources */,
 				5465BD502138586100BE0988 /* Osound.wav in Resources */,
 			);

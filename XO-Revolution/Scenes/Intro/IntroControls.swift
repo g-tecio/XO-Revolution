@@ -12,36 +12,35 @@ struct IntroControls {
     
     /// Exit Button and Label
     let gtecLogo: SKSpriteNode
-    
-    //    let soundStartGame: SKAudioNode
-    
+        
     init(inThisScene: IntroScene) {
         
-        if UIDevice.current.userInterfaceIdiom == .pad {
+        gtecLogo = SKSpriteNode.init(imageNamed: "Gtec")
+        gtecLogo.name = "buttonSprite-Game"
+        gtecLogo.zPosition = 2
+        
+        /// Resizing depending to device screen
+        if UIDevice.current.userInterfaceIdiom == .phone || UIDevice.current.deviceType == .iPad || UIDevice.current.deviceType == .iPad2 || UIDevice.current.deviceType == .iPadMini {
             
-            gtecLogo = SKSpriteNode.init(imageNamed: "Gtec")
-            gtecLogo.name = "buttonSprite-Game"
-            gtecLogo.zPosition = 2
-            gtecLogo.position = CGPoint(x: inThisScene.size.width/2, y: (inThisScene.size.height*6/10))
+            // iPhone, iPad, iPad2 and iPadMini CGPoint
+            gtecLogo.position = CGPoint(x: inThisScene.size.width/2, y: (inThisScene.size.height/2))
             
-            gtecLogo.size = CGSize(width:(gtecLogo.size.width * (inThisScene.size.width / gtecLogo.size.width ) * (17.57/100)) , height: (gtecLogo.size.height * (inThisScene.size.height / gtecLogo.size.height ) * (15.37/100)))
-
+            
+            /// iPhone, iPad, iPad2 and iPadMini CGSize
+            gtecLogo.size = CGSize(width:(gtecLogo.size.width * (inThisScene.size.width / gtecLogo.size.width ) * (33.33/100)) , height: (gtecLogo.size.height * (inThisScene.size.height / gtecLogo.size.height ) * (21.9/100)))
+            
         }else{
             
-            /// Play  Button
-            gtecLogo = SKSpriteNode.init(imageNamed: "Gtec")
-            gtecLogo.name = "buttonSprite-Game"
-            gtecLogo.zPosition = 2
-            gtecLogo.position = CGPoint(x: inThisScene.size.width/2, y: (inThisScene.size.height*5/10))
-            
-            /// Resizing depending to screen size
-            let resizeFactorX:CGFloat = inThisScene.size.width/360.0
-            let resizeFactorY:CGFloat = inThisScene.size.height/420.0
-            let originalSize = gtecLogo.size
-            gtecLogo.size = CGSize(width: originalSize.width*resizeFactorX*33.33/100, height: originalSize.height*resizeFactorY*21.88/100)
-            
+            if UIDevice.current.userInterfaceIdiom == .pad  || UIDevice.current.deviceType == .simulator {
+                
+                /// iPad CGPoint
+                gtecLogo.position = CGPoint(x: inThisScene.size.width/2, y: (inThisScene.size.height/2))
+                
+                
+                /// iPad CGSize
+                gtecLogo.size = CGSize(width:(gtecLogo.size.width * (inThisScene.size.width / gtecLogo.size.width ) * (26.37/100)) , height: (gtecLogo.size.height * (inThisScene.size.height / gtecLogo.size.height ) * (23.06/100)))
+                
+            }
         }
-        
     }
-    
 }
