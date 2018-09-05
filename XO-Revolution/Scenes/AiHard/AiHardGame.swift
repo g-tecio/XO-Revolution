@@ -198,38 +198,15 @@ class AiHardGame {
         var posOxHard = 0
         var posOyHard = 0
         
-        if(board[0][0] == 1){
-            posOxHard = 2
-            posOyHard = 2
+        if(board[1][1] == 0){
+            posOxHard = 1
+            posOyHard = 1
             if(board[posOxHard][posOyHard] == 0){
                 board[posOxHard][posOyHard] = 2
                 paintElement(position: posOxHard + (posOyHard * 3))
-            }//2,2
+            }//1,1
         }
-        if(board[0][2] == 1){
-            posOxHard = 2
-            posOyHard = 0
-            if(board[posOxHard][posOyHard] == 0){
-                board[posOxHard][posOyHard] = 2
-                paintElement(position: posOxHard + (posOyHard * 3))
-            }//2,0
-        }
-        if(board[2][2] == 1){
-            posOxHard = 0
-            posOyHard = 0
-            if(board[posOxHard][posOyHard] == 0){
-                board[posOxHard][posOyHard] = 2
-                paintElement(position: posOxHard + (posOyHard * 3))
-            }//0,0
-        }
-        if(board[2][0] == 1){
-            posOxHard = 0
-            posOyHard = 2
-            if(board[posOxHard][posOyHard] == 0){
-                board[posOxHard][posOyHard] = 2
-                paintElement(position: posOxHard + (posOyHard * 3))
-            }//2,0
-        }
+        
     }
     
     ///Oppossite Middle
@@ -1946,6 +1923,27 @@ class AiHardGame {
             }
             //End bug center move
             
+            /// O side move
+            if(board[0][0] == 1 && board[2][2] == 1){
+                posOxHard = 0
+                posOyHard = 1
+                if(board[posOxHard][posOyHard] == 0 ){
+                    board[posOxHard][posOyHard] = 2
+                    paintElement(position: posOxHard + (posOyHard * 3))
+                    return
+                }//0,1
+            }
+            
+            if(board[0][2] == 1 && board[2][0] == 1){
+                posOxHard = 1
+                posOyHard = 2
+                if(board[posOxHard][posOyHard] == 0 ){
+                    board[posOxHard][posOyHard] = 2
+                    paintElement(position: posOxHard + (posOyHard * 3))
+                    return
+                }//1,2
+            }
+            // End O side move
         }//END gameState == 2
     }//End func
     
