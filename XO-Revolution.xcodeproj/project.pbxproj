@@ -36,6 +36,8 @@
 		54E5697E2135F33F006E6679 /* redParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 54E5697D2135F33E006E6679 /* redParticle.sks */; };
 		9AB2FC5B214084CC00F519EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9AB2FC5A214084CC00F519EE /* GoogleService-Info.plist */; };
 		A295566F70B896B0DEBCF088 /* Pods_XO_Revolution.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45885DF7AF3FDDF681032BBC /* Pods_XO_Revolution.framework */; };
+		A37A160021486EBF00B3EC32 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37A15FF21486EBF00B3EC32 /* GameKit.framework */; };
+		A37A160221486EC300B3EC32 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37A160121486EC300B3EC32 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		54E5697D2135F33E006E6679 /* redParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = redParticle.sks; sourceTree = "<group>"; };
 		74D32D511A89CE434704FA54 /* Pods-XO-Revolution.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XO-Revolution.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XO-Revolution/Pods-XO-Revolution.debug.xcconfig"; sourceTree = "<group>"; };
 		9AB2FC5A214084CC00F519EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A37A15FF21486EBF00B3EC32 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		A37A160121486EC300B3EC32 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +83,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A37A160221486EC300B3EC32 /* StoreKit.framework in Frameworks */,
 				A295566F70B896B0DEBCF088 /* Pods_XO_Revolution.framework in Frameworks */,
+				A37A160021486EBF00B3EC32 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +230,8 @@
 		CC4AE7AF42EC57B36301F73E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A37A160121486EC300B3EC32 /* StoreKit.framework */,
+				A37A15FF21486EBF00B3EC32 /* GameKit.framework */,
 				45885DF7AF3FDDF681032BBC /* Pods_XO_Revolution.framework */,
 			);
 			name = Frameworks;
@@ -264,6 +272,14 @@
 				TargetAttributes = {
 					5450BA2A21349CAF00475068 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.GameCenter.iOS = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -560,6 +576,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 745E977PLG;
 				INFOPLIST_FILE = "XO-Revolution/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -579,6 +596,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 745E977PLG;
 				INFOPLIST_FILE = "XO-Revolution/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -62,6 +62,7 @@ class DifficultyScene: SKScene {
         self.backgroundColor = UIColor.clear
         
         /// Present Label and Button
+        self.addChild(difficultyControls.buttonMenu)
         self.addChild(difficultyControls.buttonEasy)
         self.addChild(difficultyControls.buttonHard)
         
@@ -71,7 +72,7 @@ class DifficultyScene: SKScene {
         
         redEmitter.targetNode = self
         redEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
-    
+        
         self.addChild(blueEmitter)
         self.addChild(redEmitter)
         
@@ -104,6 +105,9 @@ class DifficultyScene: SKScene {
             let item = atPoint(location)
             
             /// Exit and return to GameScene
+            if (item.name == "buttonSprite-Menu") {
+                gameViewController.skView.presentScene(gameViewController.menuScene)
+            }
             if (item.name == "buttonSprite-Easy") {
                 gameViewController.skView.presentScene(gameViewController.aiEasyScene)
             }
@@ -140,9 +144,9 @@ class DifficultyScene: SKScene {
         }
         else {
             blueEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
-//            blueEmitter2.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+            //            blueEmitter2.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
             redEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
-//            redEmitter2.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+            //            redEmitter2.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
         }
     }
     
