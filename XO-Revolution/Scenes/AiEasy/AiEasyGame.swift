@@ -358,6 +358,7 @@ class AiEasyGame {
         }
         /// Player X turn
         if (lastState == 1 && checkPlayWinTie() == 1) {
+            aiEasyScene.isUserInteractionEnabled = false
             aiEasyScene.run(winSound)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.resetGame()
@@ -365,6 +366,8 @@ class AiEasyGame {
             return 3 // Win X
         }
         if (lastState == 1 && checkPlayWinTie() == 3) {
+            aiEasyScene.isUserInteractionEnabled = false
+
             aiEasyScene.run(tieSound)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.resetGame()
@@ -378,6 +381,7 @@ class AiEasyGame {
             return 1 // Play O
         }
         if (lastState == 2 && checkPlayWinTie() == 2) {
+            aiEasyScene.isUserInteractionEnabled = false
             aiEasyScene.run(loseSound)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.resetGame()
@@ -385,6 +389,7 @@ class AiEasyGame {
             return 3 // Win O
         }
         if (lastState == 2 && checkPlayWinTie() == 3) {
+            aiEasyScene.isUserInteractionEnabled = false
             aiEasyScene.run(tieSound)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.resetGame()
