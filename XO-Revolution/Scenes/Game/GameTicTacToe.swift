@@ -333,6 +333,7 @@ class GameTicTacToe {
             return 3 // Win X
         }
         if (lastState == 1 && checkPlayWinTie() == 3) {
+            gameScene.isUserInteractionEnabled = false
             gameScene.run(tieSound)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.resetGame()
@@ -353,6 +354,7 @@ class GameTicTacToe {
             return 3 // Win O
         }
         if (lastState == 2 && checkPlayWinTie() == 3) {
+            gameScene.isUserInteractionEnabled = false
             gameScene.run(tieSound)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.resetGame()

@@ -2159,6 +2159,7 @@ class AiHardGame {
         }
         /// Player X turn
         if (lastState == 1 && checkPlayWinTie() == 1) {
+            aiHardGameScene.isUserInteractionEnabled = false
             aiHardGameScene.run(winSound)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.resetGame()
@@ -2166,6 +2167,7 @@ class AiHardGame {
             return 3 // Win X
         }
         if (lastState == 1 && checkPlayWinTie() == 3) {
+            aiHardGameScene.isUserInteractionEnabled = false
             aiHardGameScene.run(tieSound)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.resetGame()
@@ -2179,6 +2181,7 @@ class AiHardGame {
             return 1 // Play O
         }
         if (lastState == 2 && checkPlayWinTie() == 2) {
+            aiHardGameScene.isUserInteractionEnabled = false
             aiHardGameScene.run(loseSound)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.resetGame()
@@ -2186,6 +2189,7 @@ class AiHardGame {
             return 3 // Win O
         }
         if (lastState == 2 && checkPlayWinTie() == 3) {
+            aiHardGameScene.isUserInteractionEnabled = false
             aiHardGameScene.run(tieSound)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.resetGame()
