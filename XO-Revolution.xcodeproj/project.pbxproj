@@ -38,6 +38,12 @@
 		A295566F70B896B0DEBCF088 /* Pods_XO_Revolution.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45885DF7AF3FDDF681032BBC /* Pods_XO_Revolution.framework */; };
 		A37A160021486EBF00B3EC32 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37A15FF21486EBF00B3EC32 /* GameKit.framework */; };
 		A37A160221486EC300B3EC32 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37A160121486EC300B3EC32 /* StoreKit.framework */; };
+		EA07CAA6216E7BF100677374 /* ColorStoreControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA07CAA5216E7BF100677374 /* ColorStoreControls.swift */; };
+		EA07CAAC216E8F9B00677374 /* ColorStoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA07CAAB216E8F9B00677374 /* ColorStoreScene.swift */; };
+		EA248A1D216D2DF500545B2B /* purpleParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA248A1B216D2DF500545B2B /* purpleParticle.sks */; };
+		EA248A21216D387600545B2B /* orangeParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA248A1F216D387600545B2B /* orangeParticle.sks */; };
+		EA8F5A1A216BD0C300ADC0E8 /* StoreControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F5A19216BD0C300ADC0E8 /* StoreControls.swift */; };
+		EA8F5A1C216BD0F000ADC0E8 /* StoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F5A1B216BD0F000ADC0E8 /* StoreScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +82,12 @@
 		9AB2FC5A214084CC00F519EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A37A15FF21486EBF00B3EC32 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		A37A160121486EC300B3EC32 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		EA07CAA5216E7BF100677374 /* ColorStoreControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorStoreControls.swift; sourceTree = "<group>"; };
+		EA07CAAB216E8F9B00677374 /* ColorStoreScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStoreScene.swift; sourceTree = "<group>"; };
+		EA248A1B216D2DF500545B2B /* purpleParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = purpleParticle.sks; sourceTree = "<group>"; };
+		EA248A1F216D387600545B2B /* orangeParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = orangeParticle.sks; sourceTree = "<group>"; };
+		EA8F5A19216BD0C300ADC0E8 /* StoreControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreControls.swift; sourceTree = "<group>"; };
+		EA8F5A1B216BD0F000ADC0E8 /* StoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +144,7 @@
 			children = (
 				547B8EF6213DB2F1006FC28E /* Intro */,
 				5450BA5621349CDC00475068 /* Menu */,
+				EA8F5A18216BB5C300ADC0E8 /* SkinStore */,
 				5450BA4721349CDC00475068 /* AiEasy */,
 				5450BA4C21349CDC00475068 /* AiHard */,
 				5450BA5121349CDC00475068 /* Game */,
@@ -204,6 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				5412CC8E2135DAE900B3365B /* blueParticle.sks */,
+				EA248A1B216D2DF500545B2B /* purpleParticle.sks */,
+				EA248A1F216D387600545B2B /* orangeParticle.sks */,
 				54E5697D2135F33E006E6679 /* redParticle.sks */,
 			);
 			path = Particles;
@@ -235,6 +250,25 @@
 				45885DF7AF3FDDF681032BBC /* Pods_XO_Revolution.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA07CAA4216E63C200677374 /* ColorStore */ = {
+			isa = PBXGroup;
+			children = (
+				EA07CAA5216E7BF100677374 /* ColorStoreControls.swift */,
+				EA07CAAB216E8F9B00677374 /* ColorStoreScene.swift */,
+			);
+			path = ColorStore;
+			sourceTree = "<group>";
+		};
+		EA8F5A18216BB5C300ADC0E8 /* SkinStore */ = {
+			isa = PBXGroup;
+			children = (
+				EA8F5A19216BD0C300ADC0E8 /* StoreControls.swift */,
+				EA8F5A1B216BD0F000ADC0E8 /* StoreScene.swift */,
+				EA07CAA4216E63C200677374 /* ColorStore */,
+			);
+			path = SkinStore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,8 +347,10 @@
 				5412CC8F2135DAE900B3365B /* blueParticle.sks in Resources */,
 				54E5697E2135F33F006E6679 /* redParticle.sks in Resources */,
 				5465BD522138586100BE0988 /* TieXO.wav in Resources */,
+				EA248A21216D387600545B2B /* orangeParticle.sks in Resources */,
 				5465BD532138586100BE0988 /* LoseXO.wav in Resources */,
 				9AB2FC5B214084CC00F519EE /* GoogleService-Info.plist in Resources */,
+				EA248A1D216D2DF500545B2B /* purpleParticle.sks in Resources */,
 				5465BD542138586100BE0988 /* WinXO.wav in Resources */,
 				5465BD502138586100BE0988 /* Osound.wav in Resources */,
 			);
@@ -377,6 +413,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
@@ -393,6 +430,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
@@ -415,6 +453,7 @@
 				5450BA6421349CDC00475068 /* GameTicTacToe.swift in Sources */,
 				5450BA6221349CDC00475068 /* GameControls.swift in Sources */,
 				5450BA6621349CDC00475068 /* DifficultyScene.swift in Sources */,
+				EA07CAA6216E7BF100677374 /* ColorStoreControls.swift in Sources */,
 				5450BA3721349CAF00475068 /* GameViewController.swift in Sources */,
 				5450BA5F21349CDC00475068 /* AiHardControls.swift in Sources */,
 				5450BA5E21349CDC00475068 /* AiEasyScene.swift in Sources */,
@@ -422,13 +461,16 @@
 				5450BA2F21349CAF00475068 /* AppDelegate.swift in Sources */,
 				5450BA5C21349CDC00475068 /* AiEasyControls.swift in Sources */,
 				5450BA6021349CDC00475068 /* AiHardGame.swift in Sources */,
+				EA07CAAC216E8F9B00677374 /* ColorStoreScene.swift in Sources */,
 				5450BA5D21349CDC00475068 /* AiEasyGame.swift in Sources */,
 				5450BA6721349CDC00475068 /* MenuControls.swift in Sources */,
 				5450BA6821349CDC00475068 /* MenuScene.swift in Sources */,
+				EA8F5A1C216BD0F000ADC0E8 /* StoreScene.swift in Sources */,
 				5450BA6521349CDC00475068 /* DifficultyControls.swift in Sources */,
 				54E129AC213EF4210059D5C0 /* IntroControls.swift in Sources */,
 				54E129AD213EF4210059D5C0 /* IntroScene.swift in Sources */,
 				5450BA6121349CDC00475068 /* AiHardScene.swift in Sources */,
+				EA8F5A1A216BD0C300ADC0E8 /* StoreControls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

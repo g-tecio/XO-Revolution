@@ -18,6 +18,9 @@ class MenuScene: SKScene {
    // let skView = SKView()
 	/// Game Controls
 	var menuControls: MenuControls!
+    var storeScene: StoreScene!
+    
+    var sceneNumber: Int = 0
     
     private var lastUpdateTime : TimeInterval = 0
 
@@ -57,43 +60,102 @@ class MenuScene: SKScene {
     var triggerTime : TimeInterval = 0.25
     let blueEmitter = SKEmitterNode(fileNamed: "blueParticle")!
     let redEmitter = SKEmitterNode(fileNamed: "redParticle")!
+    let purpleEmitter = SKEmitterNode(fileNamed: "purpleParticle")!
+    let orangeEmitter = SKEmitterNode(fileNamed: "orangeParticle")!
     var randomSource = GKRandomSource.sharedRandom()
 	
 	/// Present Elements to the Scene
    override func didMove(to view: UIView) {
+    
+            self.backgroundColor = UIColor.clear
+    
+    /// BannerView.removeFromSuperview()
+    bannerView.isHidden = false
+    
+    if sceneNumber == 0 {
+        
+        /// Present Label and Button
+        self.addChild(menuControls.buttonOnePlayer)
+        self.addChild(menuControls.buttonTwoPlayers)
+        self.addChild(menuControls.buttonStore)
+        
+        /// Present effects
+        blueEmitter.targetNode = self
+        blueEmitter.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
+        
+        redEmitter.targetNode = self
+        redEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
+        
+        self.addChild(blueEmitter)
+        self.addChild(redEmitter)
+        
+        gameViewController.storeScene.sceneNumber = 0
 
-    self.backgroundColor = UIColor.clear
-    
-    /// Present Label and Button
-    self.addChild(menuControls.buttonOnePlayer)
-    self.addChild(menuControls.buttonTwoPlayers)
-    
-    /// Present effects
-    blueEmitter.targetNode = self
-    blueEmitter.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
-    
-    redEmitter.targetNode = self
-    redEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
-    
-    self.addChild(blueEmitter)
-    self.addChild(redEmitter)
-    
-    if UIDevice.current.userInterfaceIdiom == .phone || UIDevice.current.deviceType == .iPad || UIDevice.current.deviceType == .iPad2 || UIDevice.current.deviceType == .iPadMini {
         
-        // iPhone, iPad, iPad2 and iPadMini Particle
-        
-    }else{
-        
-        if UIDevice.current.userInterfaceIdiom == .pad  || UIDevice.current.deviceType == .simulator {
+        if UIDevice.current.userInterfaceIdiom == .phone || UIDevice.current.deviceType == .iPad || UIDevice.current.deviceType == .iPad2 || UIDevice.current.deviceType == .iPadMini {
             
-            /// iPad Particle
-            redEmitter.particleScale = 0.4
-            blueEmitter.particleScale = 0.4
+            // iPhone, iPad, iPad2 and iPadMini Particle
             
+        }else{
+            
+            if UIDevice.current.userInterfaceIdiom == .pad  || UIDevice.current.deviceType == .simulator {
+                
+                /// iPad Particle
+                redEmitter.particleScale = 0.4
+                blueEmitter.particleScale = 0.4
+                
+            }
         }
     }
+    
+    if(sceneNumber == 1 ){
+        
+        /// Present Label and Button
+        self.addChild(menuControls.octoberButtonOnePlayer)
+        self.addChild(menuControls.octoberButtonTwoPlayers)
+        self.addChild(menuControls.octoberButtonStore)
+        
+        /// Present effects
+        purpleEmitter.targetNode = self
+        purpleEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
+        
+        orangeEmitter.targetNode = self
+        orangeEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
+        
+        self.addChild(purpleEmitter)
+        self.addChild(orangeEmitter)
+        
+        gameViewController.storeScene.sceneNumber = 1
 
-	}
+        if UIDevice.current.userInterfaceIdiom == .phone || UIDevice.current.deviceType == .iPad || UIDevice.current.deviceType == .iPad2 || UIDevice.current.deviceType == .iPadMini {
+            
+            // iPhone, iPad, iPad2 and iPadMini Particle
+            
+        }else{
+            
+            if UIDevice.current.userInterfaceIdiom == .pad  || UIDevice.current.deviceType == .simulator {
+                
+                /// iPad Particle
+                purpleEmitter.particleScale = 0.4
+                orangeEmitter.particleScale = 0.4
+                
+            }
+        }
+        
+    }
+    
+    /// Halloween Skin
+    if sceneNumber == 2 {
+        
+        self.addChild(menuControls.halloweenButtonOnePlayer)
+        self.addChild(menuControls.halloweenButtonTwoPlayers)
+        self.addChild(menuControls.halloweenButtonStore)
+        
+        gameViewController.storeScene.sceneNumber = 2
+        
+    }
+
+}
 	
 	/// Before another Scence will be presented
 	override func willMove(from view: UIView) {
@@ -114,6 +176,10 @@ class MenuScene: SKScene {
             if (item.name == "buttonSprite-2Players") {
                     Analytics.logEvent("TwoPlayers", parameters: nil)
                 gameViewController.skView.presentScene(gameViewController.gameScene)
+            }
+            if (item.name == "buttonSprite-SkinStore") {
+                Analytics.logEvent("SkinStore", parameters: nil)
+                gameViewController.skView.presentScene(gameViewController.storeScene)
             }
 		}
 	}
@@ -140,12 +206,24 @@ class MenuScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         
-        if (blueEmitter.hasActions() || redEmitter.hasActions()) {
-            
+        if (sceneNumber == 0) {
+            if (blueEmitter.hasActions() || redEmitter.hasActions()){
+                
+            }
+            else {
+                blueEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+                redEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+            }
         }
-        else {
-            blueEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
-            redEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+        if (sceneNumber == 1) {
+            
+            if (purpleEmitter.hasActions() || orangeEmitter.hasActions()){
+                
+            }
+            else {
+                orangeEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+                purpleEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+            }
         }
     }
 }

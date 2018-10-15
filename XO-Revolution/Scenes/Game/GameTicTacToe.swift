@@ -97,12 +97,27 @@ class GameTicTacToe {
     
     
     func paintElement(position: Int) {
-        // Check gameState
-        if gameState == 1 {
+        // Check gameState and Skin
+        /// Neon Skin
+        if gameState == 1 && gameScene.sceneNumber == 0 {
             elementSprite.append(SKSpriteNode.init(imageNamed:"cross"))
         }
-        if gameState == 2 {
+        if gameState == 2 && gameScene.sceneNumber == 0 {
             elementSprite.append(SKSpriteNode.init(imageNamed:"circle"))
+        }
+        /// October Neon Skin
+        if gameState == 1 && gameScene.sceneNumber == 1 {
+            elementSprite.append(SKSpriteNode.init(imageNamed:"October_X"))
+        }
+        if gameState == 2 && gameScene.sceneNumber == 1 {
+            elementSprite.append(SKSpriteNode.init(imageNamed:"October_O"))
+        }
+        /// Halloween Skin
+        if gameState == 1 && gameScene.sceneNumber == 2 {
+            elementSprite.append(SKSpriteNode.init(imageNamed:"Halloween_X"))
+        }
+        if gameState == 2 && gameScene.sceneNumber == 2 {
+            elementSprite.append(SKSpriteNode.init(imageNamed:"Halloween_O"))
         }
         
         // Paint Element
@@ -137,57 +152,168 @@ class GameTicTacToe {
     }
     
     func showWinnerX(firstPos: Int, secondPos: Int,thirdPos:Int){
-        xOne = SKSpriteNode.init(imageNamed: gameScene.gameControls.xform.name!)
-        xOne.position = placeholder[firstPos].position
-        xOne.size =  gameScene.gameControls.xform.size
-        xOne.alpha = 0.725
-        xOne.zPosition = 5
-        gameScene.addChild(xOne)
+        if gameScene.sceneNumber == 0 {
+            xOne = SKSpriteNode.init(imageNamed: gameScene.gameControls.xform.name!)
+            xOne.position = placeholder[firstPos].position
+            xOne.size =  gameScene.gameControls.xform.size
+            xOne.alpha = 0.725
+            xOne.zPosition = 5
+            gameScene.addChild(xOne)
+            
+            xTwo = SKSpriteNode.init(imageNamed: gameScene.gameControls.xform.name!)
+            xTwo.position = placeholder[secondPos].position
+            xTwo.size =  gameScene.gameControls.xform.size
+            xTwo.alpha = 0.725
+            xTwo.zPosition = 5
+            gameScene.addChild(xTwo)
+            
+            xThree = SKSpriteNode.init(imageNamed: gameScene.gameControls.xform.name!)
+            xThree.position = placeholder[thirdPos].position
+            xThree.size =  gameScene.gameControls.xform.size
+            xThree.alpha = 0.725
+            xThree.zPosition = 5
+            gameScene.addChild(xThree)
+            
+            xOne.run(blinkAnimation())
+            xTwo.run(blinkAnimation())
+            xThree.run(blinkAnimation())
+        }
         
-        xTwo = SKSpriteNode.init(imageNamed: gameScene.gameControls.xform.name!)
-        xTwo.position = placeholder[secondPos].position
-        xTwo.size =  gameScene.gameControls.xform.size
-        xTwo.alpha = 0.725
-        xTwo.zPosition = 5
-        gameScene.addChild(xTwo)
+        if gameScene.sceneNumber == 1 {
+            xOne = SKSpriteNode.init(imageNamed: "October_X")
+            xOne.position = placeholder[firstPos].position
+            xOne.size =  gameScene.gameControls.octoberXform.size
+            xOne.alpha = 0.725
+            xOne.zPosition = 5
+            gameScene.addChild(xOne)
+            
+            xTwo = SKSpriteNode.init(imageNamed: "October_X")
+            xTwo.position = placeholder[secondPos].position
+            xTwo.size =  gameScene.gameControls.octoberXform.size
+            xTwo.alpha = 0.725
+            xTwo.zPosition = 5
+            gameScene.addChild(xTwo)
+            
+            xThree = SKSpriteNode.init(imageNamed: "October_X")
+            xThree.position = placeholder[thirdPos].position
+            xThree.size =  gameScene.gameControls.octoberXform.size
+            xThree.alpha = 0.725
+            xThree.zPosition = 5
+            gameScene.addChild(xThree)
+            
+            xOne.run(blinkAnimation())
+            xTwo.run(blinkAnimation())
+            xThree.run(blinkAnimation())
+        }
         
-        xThree = SKSpriteNode.init(imageNamed: gameScene.gameControls.xform.name!)
-        xThree.position = placeholder[thirdPos].position
-        xThree.size =  gameScene.gameControls.xform.size
-        xThree.alpha = 0.725
-        xThree.zPosition = 5
-        gameScene.addChild(xThree)
-        
-        xOne.run(blinkAnimation())
-        xTwo.run(blinkAnimation())
-        xThree.run(blinkAnimation())
+        if gameScene.sceneNumber == 2 {
+            xOne = SKSpriteNode.init(imageNamed: "Halloween_X")
+            xOne.position = placeholder[firstPos].position
+            xOne.size =  gameScene.gameControls.halloweenXform.size
+            xOne.alpha = 0.725
+            xOne.zPosition = 5
+            gameScene.addChild(xOne)
+            
+            xTwo = SKSpriteNode.init(imageNamed: "Halloween_X")
+            xTwo.position = placeholder[secondPos].position
+            xTwo.size =  gameScene.gameControls.halloweenXform.size
+            xTwo.alpha = 0.725
+            xTwo.zPosition = 5
+            gameScene.addChild(xTwo)
+            
+            xThree = SKSpriteNode.init(imageNamed: "Halloween_X")
+            xThree.position = placeholder[thirdPos].position
+            xThree.size =  gameScene.gameControls.halloweenXform.size
+            xThree.alpha = 0.725
+            xThree.zPosition = 5
+            gameScene.addChild(xThree)
+            
+            xOne.run(blinkAnimation())
+            xTwo.run(blinkAnimation())
+            xThree.run(blinkAnimation())
+        }
     }
     
     func showWinnerO(firstPos: Int, secondPos: Int,thirdPos:Int){
-        oOne = SKSpriteNode.init(imageNamed: gameScene.gameControls.oform.name!)
-        oOne.position = placeholder[firstPos].position
-        oOne.size =  gameScene.gameControls.oform.size
-        oOne.alpha = 0.725
-        oOne.zPosition = 5
-        gameScene.addChild(oOne)
+        if gameScene.sceneNumber == 0 {
+            oOne = SKSpriteNode.init(imageNamed: gameScene.gameControls.oform.name!)
+            oOne.position = placeholder[firstPos].position
+            oOne.size =  gameScene.gameControls.oform.size
+            oOne.alpha = 0.725
+            oOne.zPosition = 5
+            gameScene.addChild(oOne)
+            
+            oTwo = SKSpriteNode.init(imageNamed: gameScene.gameControls.oform.name!)
+            oTwo.position = placeholder[secondPos].position
+            oTwo.size =  gameScene.gameControls.oform.size
+            oTwo.alpha = 0.725
+            oTwo.zPosition = 5
+            gameScene.addChild(oTwo)
+            
+            oThree = SKSpriteNode.init(imageNamed: gameScene.gameControls.oform.name!)
+            oThree.position = placeholder[thirdPos].position
+            oThree.size =  gameScene.gameControls.oform.size
+            oThree.alpha = 0.725
+            oThree.zPosition = 5
+            gameScene.addChild(oThree)
+            
+            oOne.run(blinkAnimation())
+            oTwo.run(blinkAnimation())
+            oThree.run(blinkAnimation())
+        }
+        if gameScene.sceneNumber == 1 {
+            oOne = SKSpriteNode.init(imageNamed: "October_O")
+            oOne.position = placeholder[firstPos].position
+            oOne.size =  gameScene.gameControls.octoberOform.size
+            oOne.alpha = 0.725
+            oOne.zPosition = 5
+            gameScene.addChild(oOne)
+            
+            oTwo = SKSpriteNode.init(imageNamed: "October_O")
+            oTwo.position = placeholder[secondPos].position
+            oTwo.size =  gameScene.gameControls.octoberOform.size
+            oTwo.alpha = 0.725
+            oTwo.zPosition = 5
+            gameScene.addChild(oTwo)
+            
+            oThree = SKSpriteNode.init(imageNamed: "October_O")
+            oThree.position = placeholder[thirdPos].position
+            oThree.size =  gameScene.gameControls.octoberOform.size
+            oThree.alpha = 0.725
+            oThree.zPosition = 5
+            gameScene.addChild(oThree)
+            
+            oOne.run(blinkAnimation())
+            oTwo.run(blinkAnimation())
+            oThree.run(blinkAnimation())
+        }
         
-        oTwo = SKSpriteNode.init(imageNamed: gameScene.gameControls.oform.name!)
-        oTwo.position = placeholder[secondPos].position
-        oTwo.size =  gameScene.gameControls.oform.size
-        oTwo.alpha = 0.725
-        oTwo.zPosition = 5
-        gameScene.addChild(oTwo)
-        
-        oThree = SKSpriteNode.init(imageNamed: gameScene.gameControls.oform.name!)
-        oThree.position = placeholder[thirdPos].position
-        oThree.size =  gameScene.gameControls.oform.size
-        oThree.alpha = 0.725
-        oThree.zPosition = 5
-        gameScene.addChild(oThree)
-        
-        oOne.run(blinkAnimation())
-        oTwo.run(blinkAnimation())
-        oThree.run(blinkAnimation())
+        if gameScene.sceneNumber == 2 {
+            oOne = SKSpriteNode.init(imageNamed: "Halloween_O")
+            oOne.position = placeholder[firstPos].position
+            oOne.size =  gameScene.gameControls.halloweenOform.size
+            oOne.alpha = 0.725
+            oOne.zPosition = 5
+            gameScene.addChild(oOne)
+            
+            oTwo = SKSpriteNode.init(imageNamed: "Halloween_O")
+            oTwo.position = placeholder[secondPos].position
+            oTwo.size =  gameScene.gameControls.halloweenOform.size
+            oTwo.alpha = 0.725
+            oTwo.zPosition = 5
+            gameScene.addChild(oTwo)
+            
+            oThree = SKSpriteNode.init(imageNamed: "Halloween_O")
+            oThree.position = placeholder[thirdPos].position
+            oThree.size =  gameScene.gameControls.halloweenOform.size
+            oThree.alpha = 0.725
+            oThree.zPosition = 5
+            gameScene.addChild(oThree)
+            
+            oOne.run(blinkAnimation())
+            oTwo.run(blinkAnimation())
+            oThree.run(blinkAnimation())
+        }
     }
     
     func resetNet(){

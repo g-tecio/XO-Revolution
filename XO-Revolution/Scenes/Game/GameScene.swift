@@ -20,6 +20,8 @@ class GameScene: SKScene {
     /// Game TicTacToe
     var gameTicTacToe : GameTicTacToe!
     
+    var sceneNumber: Int = 0
+    
     private var lastUpdateTime : TimeInterval = 0
     
     /// Custom Initializer
@@ -52,6 +54,8 @@ class GameScene: SKScene {
     var triggerTime : TimeInterval = 0.25
     let blueEmitter = SKEmitterNode(fileNamed: "blueParticle")!
     let redEmitter = SKEmitterNode(fileNamed: "redParticle")!
+    let purpleEmitter = SKEmitterNode(fileNamed: "purpleParticle")!
+    let orangeEmitter = SKEmitterNode(fileNamed: "orangeParticle")!
     var randomSource = GKRandomSource.sharedRandom()
     
     /// Present Elements to the Scene
@@ -59,33 +63,78 @@ class GameScene: SKScene {
         
         self.backgroundColor = UIColor.clear
         
-        /// Present Label and Button
-        self.addChild(gameControls.buttonMenu)
-        self.addChild(gameControls.net)
-        
-        /// Present effects
-        blueEmitter.targetNode = self
-        blueEmitter.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
-        
-        redEmitter.targetNode = self
-        redEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
-        
-        self.addChild(blueEmitter)
-        self.addChild(redEmitter)
-        
-        if UIDevice.current.userInterfaceIdiom == .phone || UIDevice.current.deviceType == .iPad || UIDevice.current.deviceType == .iPad2 || UIDevice.current.deviceType == .iPadMini {
+        if sceneNumber == 0 {
             
-            // iPhone, iPad, iPad2 and iPadMini Particle
+            /// Present Label and Button
+            self.addChild(gameControls.buttonMenu)
+            self.addChild(gameControls.net)
             
-        }else{
+            /// Present effects
+            blueEmitter.targetNode = self
+            blueEmitter.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
             
-            if UIDevice.current.userInterfaceIdiom == .pad  || UIDevice.current.deviceType == .simulator {
+            redEmitter.targetNode = self
+            redEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
+            
+            self.addChild(blueEmitter)
+            self.addChild(redEmitter)
+            
+            if UIDevice.current.userInterfaceIdiom == .phone || UIDevice.current.deviceType == .iPad || UIDevice.current.deviceType == .iPad2 || UIDevice.current.deviceType == .iPadMini {
                 
-                /// iPad Particle
-                redEmitter.particleScale = 0.4
-                blueEmitter.particleScale = 0.4
+                // iPhone, iPad, iPad2 and iPadMini Particle
                 
+            }else{
+                
+                if UIDevice.current.userInterfaceIdiom == .pad  || UIDevice.current.deviceType == .simulator {
+                    
+                    /// iPad Particle
+                    redEmitter.particleScale = 0.4
+                    blueEmitter.particleScale = 0.4
+                    
+                }
             }
+            
+        }
+        
+        if(sceneNumber == 1 ){
+            
+            /// Present Label and Button
+            self.addChild(gameControls.octoberButtonMenu)
+            self.addChild(gameControls.octoberNet)
+            
+            /// Present effects
+            purpleEmitter.targetNode = self
+            purpleEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
+            
+            orangeEmitter.targetNode = self
+            orangeEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
+            
+            self.addChild(purpleEmitter)
+            self.addChild(orangeEmitter)
+            
+            if UIDevice.current.userInterfaceIdiom == .phone || UIDevice.current.deviceType == .iPad || UIDevice.current.deviceType == .iPad2 || UIDevice.current.deviceType == .iPadMini {
+                
+                // iPhone, iPad, iPad2 and iPadMini Particle
+                
+            }else{
+                
+                if UIDevice.current.userInterfaceIdiom == .pad  || UIDevice.current.deviceType == .simulator {
+                    
+                    /// iPad Particle
+                    purpleEmitter.particleScale = 0.4
+                    orangeEmitter.particleScale = 0.4
+                    
+                }
+            }
+            
+        }
+        
+        if(sceneNumber == 2 ){
+            
+            /// Present Label and Button
+            self.addChild(gameControls.halloweenButtonMenu)
+            self.addChild(gameControls.halloweenNet)
+            
         }
         
         gameTicTacToe.gameState = 1
@@ -139,12 +188,24 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         
-        if (blueEmitter.hasActions() || redEmitter.hasActions()) {
-            print("")
+        if (sceneNumber == 0) {
+            if (blueEmitter.hasActions() || redEmitter.hasActions()){
+                
+            }
+            else {
+                blueEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+                redEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+            }
         }
-        else {
-            blueEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
-            redEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+        if (sceneNumber == 1) {
+            
+            if (purpleEmitter.hasActions() || orangeEmitter.hasActions()){
+                
+            }
+            else {
+                orangeEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+                purpleEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+            }
         }
     }
 }

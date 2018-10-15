@@ -18,6 +18,8 @@ class DifficultyScene: SKScene {
     /// Game Controls
     var difficultyControls: DifficultyControls!
     
+    var sceneNumber: Int = 0
+    
     private var lastUpdateTime : TimeInterval = 0
     
     /// Custom Initializer
@@ -54,6 +56,8 @@ class DifficultyScene: SKScene {
     var triggerTime : TimeInterval = 0.25
     let blueEmitter = SKEmitterNode(fileNamed: "blueParticle")!
     let redEmitter = SKEmitterNode(fileNamed: "redParticle")!
+    let purpleEmitter = SKEmitterNode(fileNamed: "purpleParticle")!
+    let orangeEmitter = SKEmitterNode(fileNamed: "orangeParticle")!
     var randomSource = GKRandomSource.sharedRandom()
     
     /// Present Elements to the Scene
@@ -61,34 +65,63 @@ class DifficultyScene: SKScene {
         
         self.backgroundColor = UIColor.clear
         
-        /// Present Label and Button
-        self.addChild(difficultyControls.buttonMenu)
-        self.addChild(difficultyControls.buttonEasy)
-        self.addChild(difficultyControls.buttonHard)
-        
-        /// Present effects
-        blueEmitter.targetNode = self
-        blueEmitter.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
-        
-        redEmitter.targetNode = self
-        redEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
-        
-        self.addChild(blueEmitter)
-        self.addChild(redEmitter)
-        
-        if UIDevice.current.userInterfaceIdiom == .phone || UIDevice.current.deviceType == .iPad || UIDevice.current.deviceType == .iPad2 || UIDevice.current.deviceType == .iPadMini {
+        if sceneNumber == 0 {
+            /// Present Label and Button
+            self.addChild(difficultyControls.buttonMenu)
+            self.addChild(difficultyControls.buttonEasy)
+            self.addChild(difficultyControls.buttonHard)
             
-            // iPhone, iPad, iPad2 and iPadMini Particle
+            /// Present effects
+            blueEmitter.targetNode = self
+            blueEmitter.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
             
-        }else{
+            redEmitter.targetNode = self
+            redEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
             
-            if UIDevice.current.userInterfaceIdiom == .pad  || UIDevice.current.deviceType == .simulator {
+            self.addChild(blueEmitter)
+            self.addChild(redEmitter)
+            
+        }
+        
+        if(sceneNumber == 1 ){
+            
+            /// Present Label and Button
+            self.addChild(difficultyControls.octoberButtonMenu)
+            self.addChild(difficultyControls.octoberButtonEasy)
+            self.addChild(difficultyControls.octoberButtonHard)
+            
+            /// Present effects
+            purpleEmitter.targetNode = self
+            purpleEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
+            
+            orangeEmitter.targetNode = self
+            orangeEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
+            
+            self.addChild(purpleEmitter)
+            self.addChild(orangeEmitter)
+            
+            if UIDevice.current.userInterfaceIdiom == .phone || UIDevice.current.deviceType == .iPad || UIDevice.current.deviceType == .iPad2 || UIDevice.current.deviceType == .iPadMini {
                 
-                /// iPad Particle
-                redEmitter.particleScale = 0.4
-                blueEmitter.particleScale = 0.4
+                // iPhone, iPad, iPad2 and iPadMini Particle
                 
+            }else{
+                
+                if UIDevice.current.userInterfaceIdiom == .pad  || UIDevice.current.deviceType == .simulator {
+                    
+                    /// iPad Particle
+                    purpleEmitter.particleScale = 0.4
+                    orangeEmitter.particleScale = 0.4
+                    
+                }
             }
+            
+        }
+        /// Halloween Skin
+        if sceneNumber == 2 {
+            /// Present Label and Button
+            self.addChild(difficultyControls.halloweenButtonMenu)
+            self.addChild(difficultyControls.halloweenButtonEasy)
+            self.addChild(difficultyControls.halloweenButtonHard)
         }
         
     }
@@ -137,17 +170,29 @@ class DifficultyScene: SKScene {
         return SKAction.move(to: randomPositionInScene(),duration: 0.4)
     }
     
+   
     override func update(_ currentTime: TimeInterval) {
         
-        if (blueEmitter.hasActions() || redEmitter.hasActions()) {
-            
+        if (sceneNumber == 0) {
+            if (blueEmitter.hasActions() || redEmitter.hasActions()){
+                
+            }
+            else {
+                blueEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+                //            blueEmitter2.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+                redEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+                //            purpleEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+            }
         }
-        else {
-            blueEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
-            //            blueEmitter2.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
-            redEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
-            //            redEmitter2.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+        if (sceneNumber == 1) {
+            
+            if (purpleEmitter.hasActions() || orangeEmitter.hasActions()){
+                
+            }
+            else {
+                orangeEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+                purpleEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+            }
         }
     }
-    
 }

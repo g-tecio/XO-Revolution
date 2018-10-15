@@ -15,7 +15,7 @@ struct IntroControls {
         
     init(inThisScene: IntroScene) {
         
-        gtecLogo = SKSpriteNode.init(imageNamed: "Gtec")
+        gtecLogo = SKSpriteNode.init(imageNamed: "CwGx")
         gtecLogo.name = "buttonSprite-Game"
         gtecLogo.zPosition = 2
         
@@ -27,7 +27,7 @@ struct IntroControls {
             
             
             /// iPhone, iPad, iPad2 and iPadMini CGSize
-            gtecLogo.size = CGSize(width:(gtecLogo.size.width * (inThisScene.size.width / gtecLogo.size.width ) * (33.33/100)) , height: (gtecLogo.size.height * (inThisScene.size.height / gtecLogo.size.height ) * (21.9/100)))
+            gtecLogo.size = CGSize(width:(gtecLogo.size.width * (inThisScene.size.width / gtecLogo.size.width ) * (69.44/100)) , height: (gtecLogo.size.height * (inThisScene.size.height / gtecLogo.size.height ) * (12.5/100)))
             
         }else{
             
@@ -38,7 +38,7 @@ struct IntroControls {
                 
                 
                 /// iPad CGSize
-                gtecLogo.size = CGSize(width:(gtecLogo.size.width * (inThisScene.size.width / gtecLogo.size.width ) * (26.37/100)) , height: (gtecLogo.size.height * (inThisScene.size.height / gtecLogo.size.height ) * (23.06/100)))
+                gtecLogo.size = CGSize(width:(gtecLogo.size.width * (inThisScene.size.width / gtecLogo.size.width ) * (61.04/100)) , height: (gtecLogo.size.height * (inThisScene.size.height / gtecLogo.size.height ) * (14.64/100)))
                 
             }
         }
