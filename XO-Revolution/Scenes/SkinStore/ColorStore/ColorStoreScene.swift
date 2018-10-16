@@ -19,7 +19,7 @@ class ColorStoreScene: SKScene {
     /// Game Controls
     var colorStoreControls: ColorStoreControls!
     
-    var sceneNumber: Int = 0
+    var sceneNumber: Int = 2
     
     private var lastUpdateTime : TimeInterval = 0
     
@@ -29,7 +29,7 @@ class ColorStoreScene: SKScene {
         /// Set reference of GameViewControl
         gameViewController = referenceGVC
         
-        /// Create scene from code
+        /// Create scene from code 
         super.init(size: sceneSize)
         
         /// Menu Controls
@@ -61,6 +61,8 @@ class ColorStoreScene: SKScene {
     let redEmitter = SKEmitterNode(fileNamed: "redParticle")!
     let purpleEmitter = SKEmitterNode(fileNamed: "purpleParticle")!
     let orangeEmitter = SKEmitterNode(fileNamed: "orangeParticle")!
+    let ghostOrangeEmitter = SKEmitterNode(fileNamed: "ghostParticle")!
+    let ghostPurpleEmitter = SKEmitterNode(fileNamed: "batParticle")!
     var randomSource = GKRandomSource.sharedRandom()
     
     /// Present Elements to the Scene
@@ -73,6 +75,8 @@ class ColorStoreScene: SKScene {
             self.addChild(colorStoreControls.buttonMenu)
             self.addChild(colorStoreControls.buttonNeonClassic)
             self.addChild(colorStoreControls.buttonOctoberNeon)
+            
+            print(sceneNumber)
             
             /// Present effects
             blueEmitter.targetNode = self
@@ -105,6 +109,8 @@ class ColorStoreScene: SKScene {
             self.addChild(colorStoreControls.buttonNeonClassic)
             self.addChild(colorStoreControls.buttonOctoberNeon)
             
+            print(sceneNumber)
+            
             /// Present effects
             purpleEmitter.targetNode = self
             purpleEmitter.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
@@ -135,6 +141,32 @@ class ColorStoreScene: SKScene {
             self.addChild(colorStoreControls.halloweenButtonMenu)
             self.addChild(colorStoreControls.buttonOctoberNeon)
             self.addChild(colorStoreControls.buttonNeonClassic)
+            print(sceneNumber)
+            
+            /// Present effects
+            ghostPurpleEmitter.targetNode = self
+            ghostPurpleEmitter.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
+            
+            ghostOrangeEmitter.targetNode = self
+            ghostOrangeEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
+            
+            self.addChild(ghostPurpleEmitter)
+            self.addChild(ghostOrangeEmitter)
+            
+            if UIDevice.current.userInterfaceIdiom == .phone || UIDevice.current.deviceType == .iPad || UIDevice.current.deviceType == .iPad2 || UIDevice.current.deviceType == .iPadMini {
+                
+                // iPhone, iPad, iPad2 and iPadMini Particle
+                
+            }else{
+                
+                if UIDevice.current.userInterfaceIdiom == .pad  || UIDevice.current.deviceType == .simulator {
+                    
+                    /// iPad Particle
+                    ghostPurpleEmitter.particleScale = 0.4
+                    ghostOrangeEmitter.particleScale = 0.4
+                    
+                }
+            }
         }
     }
     /// Before another Scence will be presented
@@ -150,8 +182,11 @@ class ColorStoreScene: SKScene {
             
             /// Exit and return to GameScene
             if (item.name == "buttonSprite-Menu") {
+                self.gameViewController.showAds()
                 gameViewController.skView.presentScene(gameViewController.menuScene)
             }
+            
+            
             if (item.name == "buttonSprite-ClassicSkin") {
                 print("NeonClassic")
                 gameViewController.purchase(purchase: gameViewController.neontheme)
@@ -161,8 +196,11 @@ class ColorStoreScene: SKScene {
                 gameViewController.aiEasyScene.sceneNumber = 0
                 gameViewController.aiHardScene.sceneNumber = 0
                 gameViewController.gameScene.sceneNumber = 0
+                self.gameViewController.showAds()
                 gameViewController.skView.presentScene(gameViewController.menuScene)
             }
+            
+            
             if (item.name == "buttonSprite-OctoberNeonSkin") {
                 print("OctoberNeon")
                 Analytics.logEvent("TwoPlayers", parameters: nil)
@@ -171,6 +209,7 @@ class ColorStoreScene: SKScene {
                 gameViewController.aiEasyScene.sceneNumber = 1
                 gameViewController.aiHardScene.sceneNumber = 1
                 gameViewController.gameScene.sceneNumber = 1
+                self.gameViewController.showAds()
                 gameViewController.skView.presentScene(gameViewController.menuScene)
             }
         }
@@ -217,6 +256,16 @@ class ColorStoreScene: SKScene {
             else {
                 orangeEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
                 purpleEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+            }
+        }
+        if (sceneNumber == 2) {
+            
+            if (ghostPurpleEmitter.hasActions() || ghostOrangeEmitter.hasActions()){
+                
+            }
+            else {
+                ghostPurpleEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+                ghostOrangeEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
             }
         }
     }

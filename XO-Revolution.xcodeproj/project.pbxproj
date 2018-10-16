@@ -42,6 +42,11 @@
 		EA07CAAC216E8F9B00677374 /* ColorStoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA07CAAB216E8F9B00677374 /* ColorStoreScene.swift */; };
 		EA248A1D216D2DF500545B2B /* purpleParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA248A1B216D2DF500545B2B /* purpleParticle.sks */; };
 		EA248A21216D387600545B2B /* orangeParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA248A1F216D387600545B2B /* orangeParticle.sks */; };
+		EA60F15B21766BF900CFD358 /* ghostParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA60F15921766BF900CFD358 /* ghostParticle.sks */; };
+		EA60F15C21766BF900CFD358 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA60F15A21766BF900CFD358 /* Assets.xcassets */; };
+		EA60F15E21766DB600CFD358 /* batParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA60F15D21766DB600CFD358 /* batParticle.sks */; };
+		EA60F1622176871400CFD358 /* Laugh.wav in Resources */ = {isa = PBXBuildFile; fileRef = EA60F1612176871400CFD358 /* Laugh.wav */; };
+		EA60F166217689EC00CFD358 /* HalloweenOrgan.wav in Resources */ = {isa = PBXBuildFile; fileRef = EA60F165217689EB00CFD358 /* HalloweenOrgan.wav */; };
 		EA8F5A1A216BD0C300ADC0E8 /* StoreControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F5A19216BD0C300ADC0E8 /* StoreControls.swift */; };
 		EA8F5A1C216BD0F000ADC0E8 /* StoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8F5A1B216BD0F000ADC0E8 /* StoreScene.swift */; };
 /* End PBXBuildFile section */
@@ -86,6 +91,11 @@
 		EA07CAAB216E8F9B00677374 /* ColorStoreScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStoreScene.swift; sourceTree = "<group>"; };
 		EA248A1B216D2DF500545B2B /* purpleParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = purpleParticle.sks; sourceTree = "<group>"; };
 		EA248A1F216D387600545B2B /* orangeParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = orangeParticle.sks; sourceTree = "<group>"; };
+		EA60F15921766BF900CFD358 /* ghostParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ghostParticle.sks; sourceTree = "<group>"; };
+		EA60F15A21766BF900CFD358 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA60F15D21766DB600CFD358 /* batParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = batParticle.sks; sourceTree = "<group>"; };
+		EA60F1612176871400CFD358 /* Laugh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Laugh.wav; sourceTree = "<group>"; };
+		EA60F165217689EB00CFD358 /* HalloweenOrgan.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HalloweenOrgan.wav; sourceTree = "<group>"; };
 		EA8F5A19216BD0C300ADC0E8 /* StoreControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreControls.swift; sourceTree = "<group>"; };
 		EA8F5A1B216BD0F000ADC0E8 /* StoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,7 +216,9 @@
 			children = (
 				5465BD4F2138586100BE0988 /* Xsound.wav */,
 				5465BD4A2138586100BE0988 /* Osound.wav */,
+				EA60F165217689EB00CFD358 /* HalloweenOrgan.wav */,
 				5465BD4E2138586100BE0988 /* WinXO.wav */,
+				EA60F1612176871400CFD358 /* Laugh.wav */,
 				5465BD4D2138586100BE0988 /* LoseXO.wav */,
 				5465BD4C2138586100BE0988 /* TieXO.wav */,
 			);
@@ -220,6 +232,9 @@
 				EA248A1B216D2DF500545B2B /* purpleParticle.sks */,
 				EA248A1F216D387600545B2B /* orangeParticle.sks */,
 				54E5697D2135F33E006E6679 /* redParticle.sks */,
+				EA60F15921766BF900CFD358 /* ghostParticle.sks */,
+				EA60F15D21766DB600CFD358 /* batParticle.sks */,
+				EA60F15A21766BF900CFD358 /* Assets.xcassets */,
 			);
 			path = Particles;
 			sourceTree = "<group>";
@@ -340,17 +355,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA60F1622176871400CFD358 /* Laugh.wav in Resources */,
 				5450BA3A21349CAF00475068 /* Main.storyboard in Resources */,
 				5450BA3C21349CB300475068 /* Assets.xcassets in Resources */,
 				5450BA3F21349CB300475068 /* LaunchScreen.storyboard in Resources */,
 				5465BD552138586100BE0988 /* Xsound.wav in Resources */,
+				EA60F15C21766BF900CFD358 /* Assets.xcassets in Resources */,
 				5412CC8F2135DAE900B3365B /* blueParticle.sks in Resources */,
 				54E5697E2135F33F006E6679 /* redParticle.sks in Resources */,
 				5465BD522138586100BE0988 /* TieXO.wav in Resources */,
 				EA248A21216D387600545B2B /* orangeParticle.sks in Resources */,
+				EA60F15E21766DB600CFD358 /* batParticle.sks in Resources */,
 				5465BD532138586100BE0988 /* LoseXO.wav in Resources */,
 				9AB2FC5B214084CC00F519EE /* GoogleService-Info.plist in Resources */,
 				EA248A1D216D2DF500545B2B /* purpleParticle.sks in Resources */,
+				EA60F166217689EC00CFD358 /* HalloweenOrgan.wav in Resources */,
+				EA60F15B21766BF900CFD358 /* ghostParticle.sks in Resources */,
 				5465BD542138586100BE0988 /* WinXO.wav in Resources */,
 				5465BD502138586100BE0988 /* Osound.wav in Resources */,
 			);

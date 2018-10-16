@@ -20,7 +20,7 @@ class AiHardScene: SKScene {
     /// Game TicTacToe
     var aiHardGame: AiHardGame!
     
-    var sceneNumber: Int = 0
+    var sceneNumber: Int = 2
     
     private var lastUpdateTime : TimeInterval = 0
     
@@ -56,6 +56,8 @@ class AiHardScene: SKScene {
     let redEmitter = SKEmitterNode(fileNamed: "redParticle")!
     let purpleEmitter = SKEmitterNode(fileNamed: "purpleParticle")!
     let orangeEmitter = SKEmitterNode(fileNamed: "orangeParticle")!
+    let ghostOrangeEmitter = SKEmitterNode(fileNamed: "ghostParticle")!
+    let ghostPurpleEmitter = SKEmitterNode(fileNamed: "batParticle")!
     var randomSource = GKRandomSource.sharedRandom()
     
     /// Present Elements to the Scene
@@ -135,6 +137,31 @@ class AiHardScene: SKScene {
             self.addChild(aiHardGameControls.halloweenButtonMenu)
             self.addChild(aiHardGameControls.halloweenNet)
             
+            /// Present effects
+            ghostPurpleEmitter.targetNode = self
+            ghostPurpleEmitter.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
+            
+            ghostOrangeEmitter.targetNode = self
+            ghostOrangeEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
+            
+            self.addChild(ghostPurpleEmitter)
+            self.addChild(ghostOrangeEmitter)
+            
+            if UIDevice.current.userInterfaceIdiom == .phone || UIDevice.current.deviceType == .iPad || UIDevice.current.deviceType == .iPad2 || UIDevice.current.deviceType == .iPadMini {
+                
+                // iPhone, iPad, iPad2 and iPadMini Particle
+                
+            }else{
+                
+                if UIDevice.current.userInterfaceIdiom == .pad  || UIDevice.current.deviceType == .simulator {
+                    
+                    /// iPad Particle
+                    ghostPurpleEmitter.particleScale = 0.4
+                    ghostOrangeEmitter.particleScale = 0.4
+                    
+                }
+            }
+            
         }
         
         aiHardGame.gameState = 1
@@ -162,6 +189,7 @@ class AiHardScene: SKScene {
             
             /// Exit and return to GameScene
             if (item.name == "buttonSprite-Menu") {
+                self.gameViewController.showAds()
                 gameViewController.skView.presentScene(gameViewController.menuScene)
             }
             else {
@@ -206,6 +234,16 @@ class AiHardScene: SKScene {
             else {
                 orangeEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
                 purpleEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+            }
+        }
+        if (sceneNumber == 2) {
+            
+            if (ghostPurpleEmitter.hasActions() || ghostOrangeEmitter.hasActions()){
+                
+            }
+            else {
+                ghostPurpleEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+                ghostOrangeEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
             }
         }
     }

@@ -19,7 +19,7 @@ class StoreScene: SKScene {
     /// Game Controls
     var storeControls: StoreControls!
     
-    var sceneNumber: Int!
+    var sceneNumber: Int = 2
     
     private var lastUpdateTime : TimeInterval = 0
     
@@ -61,12 +61,15 @@ class StoreScene: SKScene {
     let redEmitter = SKEmitterNode(fileNamed: "redParticle")!
     let purpleEmitter = SKEmitterNode(fileNamed: "purpleParticle")!
     let orangeEmitter = SKEmitterNode(fileNamed: "orangeParticle")!
+    let ghostOrangeEmitter = SKEmitterNode(fileNamed: "ghostParticle")!
+    let ghostPurpleEmitter = SKEmitterNode(fileNamed: "batParticle")!
     var randomSource = GKRandomSource.sharedRandom()
     
     /// Present Elements to the Scene
     override func didMove(to view: UIView) {
         
         self.backgroundColor = UIColor.clear
+        print(sceneNumber)
         
         if sceneNumber == 0 {
             /// Present Label and Button
@@ -104,16 +107,47 @@ class StoreScene: SKScene {
             self.addChild(storeControls.buttonMenu)
             self.addChild(storeControls.buttonNeonClassic)
             self.addChild(storeControls.buttonHalloween)
-            
+
             /// Present effects
             purpleEmitter.targetNode = self
             purpleEmitter.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
-            
+
             orangeEmitter.targetNode = self
             orangeEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
-            
+
             self.addChild(purpleEmitter)
             self.addChild(orangeEmitter)
+
+            if UIDevice.current.userInterfaceIdiom == .phone || UIDevice.current.deviceType == .iPad || UIDevice.current.deviceType == .iPad2 || UIDevice.current.deviceType == .iPadMini {
+
+                // iPhone, iPad, iPad2 and iPadMini Particle
+
+            }else{
+
+                if UIDevice.current.userInterfaceIdiom == .pad  || UIDevice.current.deviceType == .simulator {
+
+                    /// iPad Particle
+                    purpleEmitter.particleScale = 0.4
+                    orangeEmitter.particleScale = 0.4
+
+                }
+            }
+        }
+        if sceneNumber == 2 {
+            /// Present Label and Button
+            self.addChild(storeControls.halloweenButtonMenu)
+            self.addChild(storeControls.buttonHalloween)
+            self.addChild(storeControls.buttonNeonClassic)
+            
+            /// Present effects
+            ghostPurpleEmitter.targetNode = self
+            ghostPurpleEmitter.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
+            
+            ghostOrangeEmitter.targetNode = self
+            ghostOrangeEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
+            
+            self.addChild(ghostPurpleEmitter)
+            self.addChild(ghostOrangeEmitter)
             
             if UIDevice.current.userInterfaceIdiom == .phone || UIDevice.current.deviceType == .iPad || UIDevice.current.deviceType == .iPad2 || UIDevice.current.deviceType == .iPadMini {
                 
@@ -124,18 +158,11 @@ class StoreScene: SKScene {
                 if UIDevice.current.userInterfaceIdiom == .pad  || UIDevice.current.deviceType == .simulator {
                     
                     /// iPad Particle
-                    purpleEmitter.particleScale = 0.4
-                    orangeEmitter.particleScale = 0.4
+                    ghostPurpleEmitter.particleScale = 0.4
+                    ghostOrangeEmitter.particleScale = 0.4
                     
                 }
             }
-        }
-        if sceneNumber == 2 {
-            /// Present Label and Button
-            self.addChild(storeControls.halloweenButtonMenu)
-            self.addChild(storeControls.buttonHalloween)
-            self.addChild(storeControls.buttonNeonClassic)
-            //        self.addChild(storeControls.buttonHalloween)
         }
     }
     /// Before another Scence will be presented
@@ -151,18 +178,55 @@ class StoreScene: SKScene {
             
             /// Exit and return to GameScene
             if (item.name == "buttonSprite-Menu") {
+                self.gameViewController.showAds()
                 gameViewController.skView.presentScene(gameViewController.menuScene)
             }
+            if sceneNumber == 0 {
             if (item.name == "buttonSprite-ClassicSkin") {
-                print("NeonClassic")
-                Analytics.logEvent("TwoPlayers", parameters: nil)
-                gameViewController.menuScene.sceneNumber = 0
-                gameViewController.difficultyScene.sceneNumber = 0
-                gameViewController.aiEasyScene.sceneNumber = 0
-                gameViewController.aiHardScene.sceneNumber = 0
-                gameViewController.gameScene.sceneNumber = 0
-                gameViewController.skView.presentScene(gameViewController.colorStoreScene)
+                    print("NeonClassic")
+                print(sceneNumber)
+                    Analytics.logEvent("TwoPlayers", parameters: nil)
+                    gameViewController.menuScene.sceneNumber = 0
+                    gameViewController.difficultyScene.sceneNumber = 0
+                    gameViewController.aiEasyScene.sceneNumber = 0
+                    gameViewController.aiHardScene.sceneNumber = 0
+                    gameViewController.gameScene.sceneNumber = 0
+                    gameViewController.skView.presentScene(gameViewController.colorStoreScene)
+                }
             }
+            
+            if sceneNumber == 1 {
+                if (item.name == "buttonSprite-ClassicSkin") {
+                    print("October")
+                    print(sceneNumber)
+                    gameViewController.purchase(purchase: gameViewController.neontheme)
+                    Analytics.logEvent("TwoPlayers", parameters: nil)
+                    gameViewController.menuScene.sceneNumber = 1
+                    gameViewController.difficultyScene.sceneNumber = 1
+                    gameViewController.aiEasyScene.sceneNumber = 1
+                    gameViewController.aiHardScene.sceneNumber = 1
+                    gameViewController.gameScene.sceneNumber = 1
+                    gameViewController.skView.presentScene(gameViewController.colorStoreScene)
+                }
+
+            }
+
+            if sceneNumber == 2 {
+                if (item.name == "buttonSprite-ClassicSkin") {
+                    print("Halloween")
+                    print(sceneNumber)
+                    gameViewController.purchase(purchase: gameViewController.neontheme)
+                    Analytics.logEvent("TwoPlayers", parameters: nil)
+                    gameViewController.menuScene.sceneNumber = 2
+                    gameViewController.difficultyScene.sceneNumber = 2
+                    gameViewController.aiEasyScene.sceneNumber = 2
+                    gameViewController.aiHardScene.sceneNumber = 2
+                    gameViewController.gameScene.sceneNumber = 2
+                    gameViewController.skView.presentScene(gameViewController.colorStoreScene)
+                }
+
+            }
+            
             if (item.name == "buttonSprite-HalloweenSkin") {
                 print("Halloween")
                 Analytics.logEvent("TwoPlayers", parameters: nil)
@@ -171,6 +235,7 @@ class StoreScene: SKScene {
                 gameViewController.aiEasyScene.sceneNumber = 2
                 gameViewController.aiHardScene.sceneNumber = 2
                 gameViewController.gameScene.sceneNumber = 2
+                self.gameViewController.showAds()
                 gameViewController.skView.presentScene(gameViewController.menuScene)
             }
         }
@@ -217,6 +282,16 @@ class StoreScene: SKScene {
             else {
                 orangeEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
                 purpleEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+            }
+        }
+        if (sceneNumber == 2) {
+            
+            if (ghostPurpleEmitter.hasActions() || ghostOrangeEmitter.hasActions()){
+                
+            }
+            else {
+                ghostPurpleEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+                ghostOrangeEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
             }
         }
     }

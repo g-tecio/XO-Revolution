@@ -25,6 +25,9 @@ struct MenuControls {
     let octoberButtonTwoPlayers:SKSpriteNode
     let octoberButtonStore:SKSpriteNode
     
+    /// Sounds
+    let onePlayerSound = SKAction.playSoundFileNamed("Laugh", waitForCompletion: false)
+    let twoPlayersSound = SKAction.playSoundFileNamed("HalloweenOrgan", waitForCompletion: false)
     
     init(inThisScene: MenuScene) {
         

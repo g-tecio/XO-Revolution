@@ -20,7 +20,7 @@ class MenuScene: SKScene {
 	var menuControls: MenuControls!
     var storeScene: StoreScene!
     
-    var sceneNumber: Int = 0
+    var sceneNumber: Int = 2
     
     private var lastUpdateTime : TimeInterval = 0
 
@@ -62,15 +62,18 @@ class MenuScene: SKScene {
     let redEmitter = SKEmitterNode(fileNamed: "redParticle")!
     let purpleEmitter = SKEmitterNode(fileNamed: "purpleParticle")!
     let orangeEmitter = SKEmitterNode(fileNamed: "orangeParticle")!
+    let ghostOrangeEmitter = SKEmitterNode(fileNamed: "ghostParticle")!
+    let ghostPurpleEmitter = SKEmitterNode(fileNamed: "batParticle")!
     var randomSource = GKRandomSource.sharedRandom()
+    
+    /// Sounds
+    let onePlayerSound = SKAction.playSoundFileNamed("Laugh", waitForCompletion: false)
+    let twoPlayersSound = SKAction.playSoundFileNamed("HalloweenOrgan", waitForCompletion: false)
 	
 	/// Present Elements to the Scene
    override func didMove(to view: UIView) {
     
             self.backgroundColor = UIColor.clear
-    
-    /// BannerView.removeFromSuperview()
-    bannerView.isHidden = false
     
     if sceneNumber == 0 {
         
@@ -153,6 +156,33 @@ class MenuScene: SKScene {
         
         gameViewController.storeScene.sceneNumber = 2
         
+        /// Present effects
+        ghostPurpleEmitter.targetNode = self
+        ghostPurpleEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
+        
+        ghostOrangeEmitter.targetNode = self
+        ghostOrangeEmitter.position = CGPoint(x: self.size.width/1, y: self.size.height/1)
+        
+        self.addChild(ghostPurpleEmitter)
+        self.addChild(ghostOrangeEmitter)
+        
+        gameViewController.storeScene.sceneNumber = 2
+        
+        if UIDevice.current.userInterfaceIdiom == .phone || UIDevice.current.deviceType == .iPad || UIDevice.current.deviceType == .iPad2 || UIDevice.current.deviceType == .iPadMini {
+            
+            // iPhone, iPad, iPad2 and iPadMini Particle
+            
+        }else{
+            
+            if UIDevice.current.userInterfaceIdiom == .pad  || UIDevice.current.deviceType == .simulator {
+                
+                /// iPad Particle
+                ghostPurpleEmitter.particleScale = 0.4
+                ghostOrangeEmitter.particleScale = 0.4
+                
+            }
+        }
+        
     }
 
 }
@@ -169,16 +199,35 @@ class MenuScene: SKScene {
 			let item = atPoint(location)
 			
 			/// Exit and return to GameScene
-			if (item.name == "buttonSprite-Game") {
+            if sceneNumber == 2 {
+                if (item.name == "buttonSprite-Game") {
                     Analytics.logEvent("OnePlayer", parameters: nil)
-                gameViewController.skView.presentScene(gameViewController.difficultyScene)
-			}
-            if (item.name == "buttonSprite-2Players") {
+                    self.gameViewController.removeads()
+                    self.run(onePlayerSound)
+                    gameViewController.skView.presentScene(gameViewController.difficultyScene)
+                }
+                if (item.name == "buttonSprite-2Players") {
                     Analytics.logEvent("TwoPlayers", parameters: nil)
-                gameViewController.skView.presentScene(gameViewController.gameScene)
+                    self.gameViewController.removeads()
+                    self.run(twoPlayersSound)
+                    gameViewController.skView.presentScene(gameViewController.gameScene)
+                }
+            }
+            else {
+                if (item.name == "buttonSprite-Game") {
+                    Analytics.logEvent("OnePlayer", parameters: nil)
+                    self.gameViewController.removeads()
+                    gameViewController.skView.presentScene(gameViewController.difficultyScene)
+                }
+                if (item.name == "buttonSprite-2Players") {
+                    Analytics.logEvent("TwoPlayers", parameters: nil)
+                    gameViewController.removeads()
+                    gameViewController.skView.presentScene(gameViewController.gameScene)
+                }
             }
             if (item.name == "buttonSprite-SkinStore") {
                 Analytics.logEvent("SkinStore", parameters: nil)
+                self.gameViewController.removeads()
                 gameViewController.skView.presentScene(gameViewController.storeScene)
             }
 		}
@@ -223,6 +272,16 @@ class MenuScene: SKScene {
             else {
                 orangeEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
                 purpleEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+            }
+        }
+        if (sceneNumber == 2) {
+            
+            if (ghostPurpleEmitter.hasActions() || ghostOrangeEmitter.hasActions()){
+                
+            }
+            else {
+                ghostPurpleEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
+                ghostOrangeEmitter.run(SKAction.sequence([moveEmitter(),SKAction.wait(forDuration: 0.0)]))
             }
         }
     }
